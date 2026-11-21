@@ -131,7 +131,7 @@
     root.querySelector('[data-transport]').textContent = SS.money(transport);
     root.querySelector('[data-subtotal]').textContent = SS.money(t.subtotal);
     root.querySelector('[data-fee-label]').textContent = f.short || 'Fulfillment';
-    root.querySelector('[data-fee]').textContent = fee === 0 ? 'Free' : (fee == null ? (f.fee_label || 'Quoted') : SS.money(fee));
+    root.querySelector('[data-fee]').textContent = fee === 0 ? 'Free' : (fee == null ? (f.fee_label || 'Quoted') : SS.money(fee) + (f.fee_suffix ? ' ' + f.fee_suffix : ''));
     var total = round2(t.subtotal + labor + transport + (fee || 0));
     root.querySelector('[data-total]').textContent = SS.money(total) + (fee == null ? ' + delivery' : '');
 

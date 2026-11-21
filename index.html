@@ -90,7 +90,7 @@ scripts:
           <div><dt>Nevada County grown stems</dt><dd>No minimum</dd></div>
           <div><dt>Off-season orders</dt><dd>{% include money.html n=t.offseason_minimum %} minimum</dd></div>
           {%- for f in site.data.fulfillment %}
-          <div><dt>{{ f.short }}</dt><dd>{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% else %}{{ f.fee_label }}{% endif %}</dd></div>
+          <div><dt>{{ f.short }}</dt><dd>{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% if f.fee_suffix %} {{ f.fee_suffix }}{% endif %}{% else %}{{ f.fee_label }}{% endif %}</dd></div>
           {%- endfor %}
         </dl>
       </div>
@@ -101,7 +101,7 @@ scripts:
           <div><dt>Transportation</dt><dd>${{ t.diy_transport_fee }}</dd></div>
           <div><dt>Labor and packaging</dt><dd>{{ t.diy_labor_pct }}%</dd></div>
           {%- for f in site.data.fulfillment_diy %}
-          <div><dt>{{ f.short }}</dt><dd>{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% else %}{{ f.fee_label }}{% endif %}</dd></div>
+          <div><dt>{{ f.short }}</dt><dd>{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% if f.fee_suffix %} {{ f.fee_suffix }}{% endif %}{% else %}{{ f.fee_label }}{% endif %}</dd></div>
           {%- endfor %}
         </dl>
       </div>

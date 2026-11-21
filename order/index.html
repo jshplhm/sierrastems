@@ -75,7 +75,7 @@ scripts:
           <span class="radio-title">{{ f.label }}</span>
           <span class="radio-detail">{{ f.detail }}</span>
         </span>
-        <span class="radio-fee">{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% else %}{{ f.fee_label }}{% endif %}</span>
+        <span class="radio-fee">{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% if f.fee_suffix %} {{ f.fee_suffix }}{% endif %}{% else %}{{ f.fee_label }}{% endif %}</span>
       </label>
       {%- endfor %}
     </fieldset>
@@ -89,7 +89,7 @@ scripts:
           <span class="radio-title">{{ f.label }}</span>
           <span class="radio-detail">{{ f.detail }}</span>
         </span>
-        <span class="radio-fee">{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% else %}{{ f.fee_label }}{% endif %}</span>
+        <span class="radio-fee">{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% if f.fee_suffix %} {{ f.fee_suffix }}{% endif %}{% else %}{{ f.fee_label }}{% endif %}</span>
       </label>
       {%- endfor %}
     </fieldset>

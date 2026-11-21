@@ -9,7 +9,8 @@
   label: Farm pickup service
   short: Farm pickup
   fee: 25
-  detail: We collect from nearby partner farms and bundle it with your order.
+  fee_suffix: per farm
+  detail: We collect from nearby partner farms and bundle it with your order. Fee is per farm.
 - id: sacramento
   label: Delivery, Sacramento
   short: Sacramento delivery
