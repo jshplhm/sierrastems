@@ -87,7 +87,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .site-header { position: sticky; top: 0; z-index: 50; background: rgba(247, 244, 238, .94); backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--line); }
 .header-inner { display: flex; align-items: center; gap: 12px; height: var(--header-h); }
 .brand { font-family: var(--serif); font-size: 1.6rem; font-weight: 600; color: var(--green); text-decoration: none; letter-spacing: -.01em; margin-right: auto; }
-.brand span { font-style: italic; font-weight: 500; color: var(--terra); }
+.brand span { font: inherit; color: inherit; }
 .brand:hover { color: var(--green); }
 .order-link { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; border-radius: var(--r); background: var(--green); color: var(--bg); text-decoration: none; font-weight: 500; font-size: .9rem; }
 .order-link:hover { background: var(--green-2); color: var(--bg); }
