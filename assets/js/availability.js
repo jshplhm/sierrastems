@@ -201,7 +201,7 @@
     paintBar();
     if (!items.length) {
       list.innerHTML = '';
-      countEl.textContent = 'The list is being updated. Check back soon, or contact us for what is cutting.';
+      countEl.textContent = 'The list is being updated. Check back soon, or contact us for what is blooming.';
     }
   });
   }
