@@ -1,0 +1,1 @@
+{%- assign n = include.n | round -%}{%- if n >= 1000 -%}{%- assign th = n | divided_by: 1000 -%}{%- assign r = n | modulo: 1000 | prepend: "00" | slice: -3, 3 -%}${{ th }},{{ r }}{%- else -%}${{ n }}{%- endif -%}

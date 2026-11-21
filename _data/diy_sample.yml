@@ -1,0 +1,17 @@
+# Sample DIY guide, shown only when the DIY sheet is not set or cannot be read.
+# Same shape as a month tab: category, item, stems per bunch, price per bunch.
+- { category: Flowers, item: Alstromeria Asst. Select, bunch: "10", price: 26.50 }
+- { category: Flowers, item: Anemone - Import, bunch: "10", price: 47.50 }
+- { category: Flowers, item: Dahlias, bunch: "5-7", price: 38.50 }
+- { category: Flowers, item: Hydrangea - Local, bunch: "5", price: 49.50 }
+- { category: Flowers, item: Lisianthus, bunch: "5-7", price: 52.50 }
+- { category: Flowers, item: Ranunculus - Import, bunch: "10", price: 67.50 }
+- { category: Flowers, item: Scabiosa Pods, bunch: "10", price: 22.50 }
+- { category: Flowers, item: Snapdragons, bunch: "10", price: 41.50 }
+- { category: Greens, item: Euc Silver Dollar, bunch: GB, price: 23.50 }
+- { category: Greens, item: Olive, bunch: GB, price: 16.50 }
+- { category: Greens, item: Ruscus - Italian, bunch: "5", price: 43.50 }
+- { category: California Roses, item: Garden Roses, bunch: "12", price: 127.50 }
+- { category: California Roses, item: Spray Roses - All, bunch: "7-10", price: 57.00 }
+- { category: "Ecuadorian Roses - Red & Color", item: 50 CM, bunch: "25", price: 98.50 }
+- { category: Garlands, item: Garland - One Item, bunch: Per Foot, price: 22.50 }

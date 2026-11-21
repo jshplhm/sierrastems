@@ -1,0 +1,30 @@
+{%- assign b = site.business -%}
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="brand brand-footer">Sierra<span>Stems</span></p>
+      <p>Wholesale flowers for florists and DIY weddings.</p>
+      <p class="muted">{{ b.city }}, {{ b.state }}. Serving {{ b.service_area | array_to_sentence_string }}.</p>
+    </div>
+    <div>
+      <h2 class="footer-h">Order</h2>
+      <ul class="plain">
+        <li><a href="{{ '/availability/' | relative_url }}">Florist list</a></li>
+        <li><a href="{{ '/diy/' | relative_url }}">DIY wedding guide</a></li>
+        <li><a href="{{ '/order/' | relative_url }}">Your order</a></li>
+        <li><a href="{{ '/terms/' | relative_url }}">Terms and fees</a></li>
+        <li><a href="{{ '/sourcing/' | relative_url }}">Sourcing</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-h">Contact</h2>
+      <ul class="plain">
+        {%- unless b.email contains "[" %}<li><a href="mailto:{{ b.email }}">{{ b.email }}</a></li>{% endunless %}
+        {%- unless b.phone contains "[" %}<li><a href="tel:{{ b.phone | remove: ' ' | remove: '(' | remove: ')' | remove: '-' }}">{{ b.phone }}</a></li>{% endunless %}
+        {%- unless b.instagram contains "[" %}<li><a href="https://www.instagram.com/{{ b.instagram }}" rel="noopener">@{{ b.instagram }}</a></li>{% endunless %}
+        <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-base"><p class="muted">&copy; {{ site.time | date: '%Y' }} SierraStems</p></div>
+</footer>

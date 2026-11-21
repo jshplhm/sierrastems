@@ -1,0 +1,13 @@
+# Fulfillment choices for DIY wedding orders. The transportation fee and the
+# labor and packaging fee (in _config.yml, terms) apply on top of these.
+- id: diy-pickup
+  label: Pickup, Nevada City studio
+  short: Studio pickup
+  fee: 0
+  detail: Flowers wait in our walk-in cooler.
+- id: diy-delivery
+  label: Delivery to you or your venue
+  short: Delivery
+  fee:
+  fee_label: Quoted per order
+  detail: Priced by location.

@@ -1,0 +1,58 @@
+---
+title: Terms, Minimums, and Delivery Fees
+description: SierraStems terms for florists and DIY weddings. No minimum on Nevada County grown stems, free Nevada City pickup, $55 Sacramento delivery, Lake Tahoe delivery by quote, and a $500 DIY order minimum.
+permalink: /terms/
+body_class: page-terms
+---
+{%- assign t = site.terms -%}
+<section class="page-head wrap">
+  <p class="eyebrow">Terms</p>
+  <h1 class="h-page">Terms and fees</h1>
+  <p class="lede">Two price lists with their own terms: one for florists and event designers, one for couples doing their own wedding flowers.</p>
+</section>
+
+<div class="wrap terms-page">
+  <section class="terms-block" id="florists">
+    <h2 class="h-section">Florists and event designers</h2>
+    <dl class="def">
+      <div><dt>Trade prices</dt><dd>The florist list shows wholesale prices with a trade code. <a href="{{ '/contact/' | relative_url }}">Contact us</a> to set up a trade account.</dd></div>
+      <div><dt>Nevada County grown stems</dt><dd>No minimum</dd></div>
+      <div><dt>Off-season orders</dt><dd>{% include money.html n=t.offseason_minimum %} minimum. Off-season stems come from Central Coast growers, and the minimum is set for larger weddings. Nevada County grown stems in the same order do not count toward it and are never held to it.</dd></div>
+      {%- for f in site.data.fulfillment %}
+      <div><dt>{{ f.label }}</dt><dd><strong>{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% else %}{{ f.fee_label }}{% endif %}</strong>. {{ f.detail }}</dd></div>
+      {%- endfor %}
+    </dl>
+  </section>
+
+  <section class="terms-block" id="diy">
+    <h2 class="h-section">DIY weddings</h2>
+    <dl class="def">
+      <div><dt>Prices</dt><dd>Per bunch, from the price guide for your wedding month. Stems per bunch are listed with each flower.</dd></div>
+      <div><dt>Order minimum</dt><dd>{% include money.html n=t.diy_minimum %} in flowers.</dd></div>
+      <div><dt>Transportation</dt><dd>${{ t.diy_transport_fee }} per order.</dd></div>
+      <div><dt>Labor and packaging</dt><dd>{{ t.diy_labor_pct }}% of the flower total.</dd></div>
+      {%- for f in site.data.fulfillment_diy %}
+      <div><dt>{{ f.label }}</dt><dd><strong>{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% else %}{{ f.fee_label }}{% endif %}</strong>. {{ f.detail }}</dd></div>
+      {%- endfor %}
+    </dl>
+  </section>
+
+  <section class="terms-block">
+    <h2 class="h-section">Ordering</h2>
+    <dl class="def">
+      {%- unless t.cutoff contains "[" %}<div><dt>Cutoff</dt><dd>{{ t.cutoff }}</dd></div>{% endunless %}
+      <div><dt>Confirmation</dt><dd>An order sent through the site is a request. We confirm flowers, quantities, fulfillment, and your total by email or phone. The order is final once confirmed.</dd></div>
+      {%- unless t.payment contains "[" %}<div><dt>Payment</dt><dd>{{ t.payment }}</dd></div>{% endunless %}
+    </dl>
+  </section>
+
+  <section class="terms-block">
+    <h2 class="h-section">Substitutions</h2>
+    <p>Flowers are a crop, and weather changes what we can cut. If a confirmed flower falls short on quality or count, we tell you before pickup or delivery and offer the closest match in color, form, and value. We do not substitute focal flowers without your OK. If you want no substitutions at all, say so in your order notes and we will credit anything we cannot fill.</p>
+  </section>
+
+  <section class="terms-block">
+    <h2 class="h-section">Quality</h2>
+    <p>Check your flowers at pickup or delivery. If something is not right, send a photo the same day and we will make it right.</p>
+  </section>
+</div>

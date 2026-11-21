@@ -1,0 +1,142 @@
+# Sample list. The site shows this only when the Google Sheet CSV is not set
+# or cannot be reached. Same columns as docs/availability-template.csv.
+- name: Garden Rose
+  variety: Juliet
+  category: focal
+  color: Peach
+  stem_length: 50 cm
+  unit: Bunch of 10
+  price: 42
+  qty_available: 24
+  farm: Central Coast partner grower
+  region: Monterey County
+  nevada_county: false
+  image_url:
+  active: true
+  updated: "2026-11-20"
+- name: Garden Rose
+  variety: Keira
+  category: focal
+  color: Blush
+  stem_length: 50 cm
+  unit: Bunch of 10
+  price: 44
+  qty_available: 18
+  farm: Central Coast partner grower
+  region: Monterey County
+  nevada_county: false
+  image_url:
+  active: true
+  updated: "2026-11-20"
+- name: Dahlia
+  variety: Café au Lait
+  category: focal
+  color: Blush
+  stem_length: 45 cm
+  unit: Bunch of 5
+  price: 18
+  qty_available: 40
+  farm: SierraStems Farm
+  region: Nevada County
+  nevada_county: true
+  image_url:
+  active: true
+  updated: "2026-11-20"
+- name: Dahlia
+  variety: Karma Choc
+  category: focal
+  color: Burgundy
+  stem_length: 50 cm
+  unit: Bunch of 5
+  price: 16
+  qty_available: 30
+  farm: SierraStems Farm
+  region: Nevada County
+  nevada_county: true
+  image_url:
+  active: true
+  updated: "2026-11-20"
+- name: Ranunculus
+  variety: Butterfly Hades
+  category: focal
+  color: Mauve
+  stem_length: 40 cm
+  unit: Bunch of 10
+  price: 22
+  qty_available: 35
+  farm: Central Coast partner grower
+  region: Monterey County
+  nevada_county: false
+  image_url:
+  active: true
+  updated: "2026-11-20"
+- name: Lisianthus
+  variety: Rosanne Brown
+  category: focal
+  color: Mauve
+  stem_length: 60 cm
+  unit: Bunch of 10
+  price: 24
+  qty_available: 20
+  farm: SierraStems Farm
+  region: Nevada County
+  nevada_county: true
+  image_url:
+  active: true
+  updated: "2026-11-19"
+- name: Cosmos
+  variety: Double Click Cranberries
+  category: filler
+  color: Burgundy
+  stem_length: 50 cm
+  unit: Bunch of 10
+  price: 12
+  qty_available: 25
+  farm: SierraStems Farm
+  region: Nevada County
+  nevada_county: true
+  image_url:
+  active: true
+  updated: "2026-11-19"
+- name: Scabiosa Pods
+  variety: Starflower
+  category: textural
+  color: Green
+  stem_length: 45 cm
+  unit: Bunch of 10
+  price: 14
+  qty_available: 30
+  farm: SierraStems Farm
+  region: Nevada County
+  nevada_county: true
+  image_url:
+  active: true
+  updated: "2026-11-19"
+- name: Eucalyptus
+  variety: Silver Dollar
+  category: textural
+  color: Green
+  stem_length: 70 cm
+  unit: Bunch of 10
+  price: 15
+  qty_available: 50
+  farm: Central Coast partner grower
+  region: Monterey County
+  nevada_county: false
+  image_url:
+  active: true
+  updated: "2026-11-18"
+- name: Sweet Pea
+  variety: Mixed Spencer
+  category: filler
+  color: Lavender
+  stem_length: 35 cm
+  unit: Bunch of 10
+  price: 16
+  qty_available: 22
+  farm: Central Coast partner grower
+  region: Monterey County
+  nevada_county: false
+  image_url:
+  active: true
+  updated: "2026-11-18"

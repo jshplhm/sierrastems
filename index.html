@@ -1,0 +1,124 @@
+---
+title: Wholesale Flowers in Nevada City for Florists and DIY Weddings
+seo:
+  name: SierraStems
+description: Wholesale flowers in Nevada City. California grown stems for florists in Sacramento, Lake Tahoe, Truckee, and Nevada County, and flowers by the bunch for DIY weddings.
+body_class: home
+preload_hero: true
+scripts:
+  - home.js
+---
+{%- assign t = site.terms -%}
+<section class="hero">
+  <div class="hero-media">{% include photo.html slot="hero" eager=true sizes="(min-width: 960px) 55vw, 100vw" %}</div>
+  <div class="hero-copy wrap">
+    <p class="eyebrow">Wholesale flowers, Nevada City</p>
+    <h1>Flowers for florists and DIY weddings.</h1>
+    <p class="lede">A weekly California grown list for florists and event designers. Flowers by the bunch for couples doing their own wedding flowers. Serving Tahoe, Truckee, Nevada County, and Sacramento.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="{{ '/availability/' | relative_url }}">Florist list</a>
+      <a class="btn btn-ghost" href="{{ '/diy/' | relative_url }}">DIY wedding guide</a>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap">
+  <div class="doors">
+    <a class="door" href="{{ '/availability/' | relative_url }}">
+      <span class="eyebrow">Florists and event designers</span>
+      <span class="door-title">California grown stems, farm direct.</span>
+      <span class="door-copy">A fresh list every week with the farm named on every stem. Nevada County grown stems have no minimum. Wholesale prices with your trade code.</span>
+      <span class="link-arrow">See this week's list</span>
+    </a>
+    <a class="door" href="{{ '/diy/' | relative_url }}">
+      <span class="eyebrow">DIY weddings</span>
+      <span class="door-title">Flowers by the bunch for your wedding month.</span>
+      <span class="door-copy">Pick your month, choose your flowers, and pick them up from our cooler in Nevada City. Orders start at {% include money.html n=t.diy_minimum %}.</span>
+      <span class="link-arrow">See the DIY price guide</span>
+    </a>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <p class="eyebrow">For florists</p>
+    <ul class="props">
+      <li>
+        <h2>Farm direct</h2>
+        <p>Our Nevada County farm in season. Central Coast growers in Monterey County the rest of the year.</p>
+      </li>
+      <li>
+        <h2>Every stem has a source</h2>
+        <p>Each listing names the farm and region it came from, so you can tell your clients exactly where their flowers grew.</p>
+      </li>
+      <li>
+        <h2>A fresh list every week</h2>
+        <p>Order straight from the weekly list. Stems go from the field to our walk-in cooler to you, not across a market floor in San Francisco.</p>
+      </li>
+    </ul>
+
+    <div class="section-head preview-head">
+      <h2 class="h-display">On the florist list this week</h2>
+      <p class="updated" data-updated aria-live="polite">&nbsp;</p>
+    </div>
+    <ul class="preview-grid" data-preview>{% include stem-skeleton.html count=6 %}</ul>
+    <noscript><p>Turn on JavaScript to see this week's list, or <a href="{{ '/contact/' | relative_url }}">contact us</a>.</p></noscript>
+    <p class="section-cta"><a class="btn btn-primary" href="{{ '/availability/' | relative_url }}">See the full list</a></p>
+  </div>
+</section>
+
+<section class="section wrap split">
+  <div class="split-media">{% include photo.html slot="specialty" sizes="(min-width: 960px) 40vw, 100vw" %}</div>
+  <div class="split-copy">
+    <p class="eyebrow">What we grow and source</p>
+    <h2 class="h-display">Garden roses, dahlias, and the stems that make a design.</h2>
+    <p>We specialize in the flowers that are hard to find in good condition: garden roses, dahlias, and specialty and textural stems that give a piece movement.</p>
+    <p>Next season on the farm: fritillaria, allium, ranunculus, dahlias, lisianthus, and filler flowers.</p>
+    <p><a class="link-arrow" href="{{ '/sourcing/' | relative_url }}">Sourcing and seasons</a></p>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="wrap terms-strip">
+    <div>
+      <p class="eyebrow">How ordering works</p>
+      <h2 class="h-display">Clear terms, no surprises.</h2>
+    </div>
+    <div class="term-cols">
+      <div>
+        <h3 class="term-h">Florists</h3>
+        <dl class="term-list">
+          <div><dt>Nevada County grown stems</dt><dd>No minimum</dd></div>
+          <div><dt>Off-season orders</dt><dd>{% include money.html n=t.offseason_minimum %} minimum</dd></div>
+          {%- for f in site.data.fulfillment %}
+          <div><dt>{{ f.short }}</dt><dd>{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% else %}{{ f.fee_label }}{% endif %}</dd></div>
+          {%- endfor %}
+        </dl>
+      </div>
+      <div>
+        <h3 class="term-h">DIY weddings</h3>
+        <dl class="term-list">
+          <div><dt>Order minimum</dt><dd>{% include money.html n=t.diy_minimum %}</dd></div>
+          <div><dt>Transportation</dt><dd>${{ t.diy_transport_fee }}</dd></div>
+          <div><dt>Labor and packaging</dt><dd>{{ t.diy_labor_pct }}%</dd></div>
+          {%- for f in site.data.fulfillment_diy %}
+          <div><dt>{{ f.short }}</dt><dd>{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% else %}{{ f.fee_label }}{% endif %}</dd></div>
+          {%- endfor %}
+        </dl>
+      </div>
+    </div>
+    <p><a class="link-arrow link-light" href="{{ '/terms/' | relative_url }}">Full terms</a></p>
+  </div>
+</section>
+
+<section class="section wrap area">
+  <p class="eyebrow">Service area</p>
+  <h2 class="h-display">A local flower wholesaler for the Sierra and the valley.</h2>
+  <p>We deliver wholesale flowers to Sacramento florists, deliver to Lake Tahoe and Truckee by quote, and hold every order for pickup at our Nevada City studio.</p>
+  <div class="actions">
+    <a class="btn btn-primary" href="{{ '/availability/' | relative_url }}">Florist list</a>
+    <a class="btn btn-ghost" href="{{ '/diy/' | relative_url }}">DIY wedding guide</a>
+  </div>
+</section>
+
+{% include fallback-data.html %}

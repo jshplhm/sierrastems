@@ -1,0 +1,57 @@
+---
+title: DIY Wedding Flowers by the Bunch, Nevada City and Tahoe
+description: Wholesale flowers for couples doing their own wedding flowers in Lake Tahoe, Truckee, Nevada County, and Sacramento. Monthly prices by the bunch, pickup in Nevada City.
+permalink: /diy/
+body_class: page-diy
+scripts:
+  - diy.js
+---
+{%- assign t = site.terms -%}
+<section class="tool-head">
+  <div class="wrap">
+    <p class="eyebrow">DIY weddings</p>
+    <h1 class="h-page">Flowers by the bunch</h1>
+    <p class="tool-note">Prices per bunch for your wedding month. Order minimum {% include money.html n=t.diy_minimum %}. A ${{ t.diy_transport_fee }} transportation fee and {{ t.diy_labor_pct }}% labor and packaging fee apply. <a href="{{ '/terms/' | relative_url }}#diy">Terms</a></p>
+  </div>
+</section>
+
+<div class="filters-bar">
+  <form class="wrap filters filters-diy" data-filters role="search" aria-label="Filter flowers" onsubmit="return false">
+    <label class="select select-month">
+      <span class="select-label">Wedding month</span>
+      <select name="month" data-month>
+        {%- assign months = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," -%}
+        {%- for m in months %}<option value="{{ m }}">{{ m }}</option>{% endfor -%}
+      </select>
+    </label>
+    <label class="search">
+      <span class="sr-only">Search flowers</span>
+      <input type="search" name="q" placeholder="Search peony, eucalyptus, garden rose" autocomplete="off" enterkeyhint="search">
+    </label>
+    <div class="chips" role="group" aria-label="Category" data-category-chips>
+      <button type="button" class="chip" aria-pressed="true" data-category="">All</button>
+    </div>
+  </form>
+</div>
+
+<section class="wrap tool-body">
+  <p class="result-count" data-count aria-live="polite"></p>
+  <p class="guide-note" data-guide-note hidden></p>
+  <div class="stem-table diy-table" role="region" aria-label="Flowers for this month">
+    <div class="stem-row stem-header" aria-hidden="true">
+      <span>Flower</span><span>Bunch</span><span>Price</span><span>Order</span>
+    </div>
+    <ul class="stem-list" data-list>{% include stem-skeleton.html count=8 %}</ul>
+  </div>
+  <div class="empty" data-empty hidden></div>
+  <noscript><p>Turn on JavaScript to see the price guide, or <a href="{{ '/contact/' | relative_url }}">contact us</a>.</p></noscript>
+</section>
+
+<div class="order-bar" data-order-bar aria-live="polite">
+  <div class="wrap order-bar-inner">
+    <p><strong data-bar-count>0 items</strong> <span data-bar-total>$0.00</span></p>
+    <a class="btn btn-primary btn-sm" href="{{ '/order/?list=diy' | relative_url }}">Review order</a>
+  </div>
+</div>
+
+{% include fallback-data.html %}

@@ -1,0 +1,35 @@
+{%- assign b = site.business -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WholesaleStore",
+  "@id": "{{ site.url }}/#business",
+  "name": {{ b.name | jsonify }},
+  "description": {{ site.description | jsonify }},
+  "url": "{{ site.url }}{{ site.baseurl }}/",
+  "image": "{{ site.url }}{{ site.baseurl }}/assets/images/og-default.jpg",
+  "logo": "{{ site.url }}{{ site.baseurl }}/apple-touch-icon.png",
+  {%- unless b.phone contains "[" %}
+  "telephone": {{ b.phone | jsonify }},
+  {%- endunless %}
+  {%- unless b.email contains "[" %}
+  "email": {{ b.email | jsonify }},
+  {%- endunless %}
+  {%- unless b.instagram contains "[" or b.instagram == blank %}
+  "sameAs": ["https://www.instagram.com/{{ b.instagram }}"],
+  {%- endunless %}
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": {{ b.city | jsonify }},
+    "addressRegion": {{ b.state | jsonify }},
+    "postalCode": {{ b.postal_code | jsonify }},
+    "addressCountry": {{ b.country | jsonify }}
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 39.2616, "longitude": -121.0161 },
+  "areaServed": [
+    {% for a in b.service_area %}{ "@type": "Place", "name": {{ a | append: ", CA" | jsonify }} }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "knowsAbout": ["Wholesale flowers", "California grown flowers", "Garden roses", "Dahlias", "Specialty cut flowers"]
+}
+</script>

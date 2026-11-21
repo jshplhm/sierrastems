@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#24392e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap"></noscript>
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+{% if page.preload_hero %}<link rel="preload" as="image" href="{{ site.data.images.hero.src | relative_url }}" fetchpriority="high">{% endif %}
+{% seo %}
+{% include schema.html %}
+<script>
+  window.SS_CONFIG = {
+    csv: {{ site.availability_csv_url | jsonify }},
+    endpoint: {{ site.order_endpoint | jsonify }},
+    minimum: {{ site.terms.offseason_minimum | default: 1000 }},
+    tradeHash: {{ site.trade_code_sha256 | jsonify }},
+    diySheetId: {{ site.diy_sheet_id | jsonify }},
+    diyUrls: {{ site.diy_csv_urls | jsonify }},
+    diy: { minimum: {{ site.terms.diy_minimum | default: 0 }}, transport: {{ site.terms.diy_transport_fee | default: 0 }}, laborPct: {{ site.terms.diy_labor_pct | default: 0 }} },
+    diyUrl: {{ '/diy/' | relative_url | jsonify }},
+    email: {{ site.business.email | jsonify }},
+    orderUrl: {{ '/order/' | relative_url | jsonify }},
+    availabilityUrl: {{ '/availability/' | relative_url | jsonify }}
+  };
+  try { if (SS_CONFIG.tradeHash && localStorage.getItem('ss-trade') === SS_CONFIG.tradeHash) document.documentElement.classList.add('trade-ok'); } catch (e) {}
+</script>
+<script src="{{ '/assets/js/ss.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+{% for s in page.scripts %}<script src="{{ s | prepend: '/assets/js/' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+{% endfor %}

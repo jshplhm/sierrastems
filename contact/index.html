@@ -1,0 +1,31 @@
+---
+title: Contact, Wholesale Flowers in Nevada City
+description: Contact SierraStems, a local flower wholesaler in Nevada City serving florists and DIY weddings in Sacramento, Lake Tahoe, Truckee, and Nevada County.
+permalink: /contact/
+body_class: page-contact
+---
+{%- assign b = site.business -%}
+<section class="page-head wrap">
+  <p class="eyebrow">Contact</p>
+  <h1 class="h-page">Talk to us</h1>
+  <p class="lede">Trade accounts and codes, standing orders, DIY wedding questions, and what is cutting next week.</p>
+</section>
+
+<div class="wrap contact-grid">
+  <dl class="def contact-def">
+    {%- unless b.email contains "[" %}<div><dt>Email</dt><dd><a href="mailto:{{ b.email }}">{{ b.email }}</a></dd></div>{% endunless %}
+    {%- unless b.phone contains "[" %}<div><dt>Phone</dt><dd><a href="tel:{{ b.phone | remove: ' ' | remove: '(' | remove: ')' | remove: '-' }}">{{ b.phone }}</a></dd></div>{% endunless %}
+    {%- unless b.instagram contains "[" %}<div><dt>Instagram</dt><dd><a href="https://www.instagram.com/{{ b.instagram }}" rel="noopener">@{{ b.instagram }}</a></dd></div>{% endunless %}
+    <div><dt>Studio</dt><dd>{{ b.city }}, {{ b.state }}. Pickup details come with your order confirmation.</dd></div>
+    <div><dt>Service area</dt><dd>{{ b.service_area | array_to_sentence_string }}</dd></div>
+  </dl>
+  <div class="contact-media">{% include photo.html slot="cooler" sizes="(min-width: 960px) 40vw, 100vw" %}</div>
+</div>
+
+<section class="section wrap area">
+  <h2 class="h-display">Ready to order?</h2>
+  <div class="actions">
+    <a class="btn btn-primary" href="{{ '/availability/' | relative_url }}">Florist list</a>
+    <a class="btn btn-ghost" href="{{ '/diy/' | relative_url }}">DIY wedding guide</a>
+  </div>
+</section>

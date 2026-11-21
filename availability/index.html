@@ -1,0 +1,66 @@
+---
+title: Wholesale Flowers for Florists, This Week's List
+description: This week's California grown wholesale flowers for florists and event designers, with stem length, quantity, and the farm each stem came from. Pickup in Nevada City or delivery to Sacramento and Lake Tahoe.
+permalink: /availability/
+body_class: page-availability
+scripts:
+  - availability.js
+---
+<section class="tool-head">
+  <div class="wrap">
+    <p class="eyebrow">For florists and event designers</p>
+    <h1 class="h-page">This week's list</h1>
+    <div data-trade-content>
+      <p class="updated" data-updated aria-live="polite">&nbsp;</p>
+      <p class="tool-note">Wholesale prices per unit. Nevada County grown stems have no minimum. Off-season orders start at {% include money.html n=site.terms.offseason_minimum %}. <a href="{{ '/terms/' | relative_url }}">Terms</a> · <button type="button" class="link-btn" data-lock>Hide prices</button></p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap gate-wrap">{% include trade-gate.html %}</section>
+
+<div data-trade-content>
+  <div class="filters-bar">
+    <form class="wrap filters" data-filters role="search" aria-label="Filter stems" onsubmit="return false">
+      <label class="search">
+        <span class="sr-only">Search stems</span>
+        <input type="search" name="q" placeholder="Search rose, dahlia, blush" autocomplete="off" enterkeyhint="search">
+      </label>
+      <div class="chips" role="group" aria-label="Category" data-category-chips>
+        <button type="button" class="chip" aria-pressed="true" data-category="">All</button>
+        <button type="button" class="chip" aria-pressed="false" data-category="focal">Focal</button>
+        <button type="button" class="chip" aria-pressed="false" data-category="filler">Filler</button>
+        <button type="button" class="chip" aria-pressed="false" data-category="textural">Textural</button>
+      </div>
+      <label class="select">
+        <span class="sr-only">Color</span>
+        <select name="color"><option value="">All colors</option></select>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" name="nc">
+        <span>Nevada County grown</span>
+      </label>
+    </form>
+  </div>
+
+  <section class="wrap tool-body">
+    <p class="result-count" data-count aria-live="polite"></p>
+    <div class="stem-table" role="region" aria-label="Available stems">
+      <div class="stem-row stem-header" aria-hidden="true">
+        <span></span><span>Stem</span><span>Color</span><span>Length</span><span>Unit</span><span>Price</span><span>Available</span><span>Source</span><span>Order</span>
+      </div>
+      <ul class="stem-list" data-list>{% include stem-skeleton.html count=8 %}</ul>
+    </div>
+    <p class="empty" data-empty hidden>No stems match those filters. <button type="button" class="link-btn" data-clear>Clear filters</button></p>
+    <noscript><p>Turn on JavaScript to use the list, or <a href="{{ '/contact/' | relative_url }}">contact us</a> for this week's list.</p></noscript>
+  </section>
+</div>
+
+<div class="order-bar" data-order-bar aria-live="polite">
+  <div class="wrap order-bar-inner">
+    <p><strong data-bar-count>0 items</strong> <span data-bar-total>$0.00</span></p>
+    <a class="btn btn-primary btn-sm" href="{{ '/order/?list=trade' | relative_url }}">Review order</a>
+  </div>
+</div>
+
+{% include fallback-data.html %}

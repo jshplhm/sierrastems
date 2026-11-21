@@ -1,0 +1,2 @@
+{%- assign img = site.data.images[include.slot] -%}
+<img src="{{ img.src | relative_url }}" alt="{{ img.alt }}" width="{{ img.width }}" height="{{ img.height }}"{% if include.eager %} fetchpriority="high"{% else %} loading="lazy" decoding="async"{% endif %}{% if include.sizes %} sizes="{{ include.sizes }}"{% endif %}>

@@ -1,0 +1,134 @@
+---
+title: Place a Flower Order
+description: Send a flower order to SierraStems in Nevada City, from the florist list or the DIY wedding guide. Pickup in Nevada City or delivery to Sacramento and Lake Tahoe.
+permalink: /order/
+body_class: page-order
+scripts:
+  - order.js
+---
+{%- assign t = site.terms -%}
+<script>try{var q=new URLSearchParams(location.search).get('list');var k=q==='diy'?'ss-order-diy-v1':(q==='trade'?'ss-order-v1':null);var n=function(x){return JSON.parse(localStorage.getItem(x)||'[]').length};if(k?n(k):(n('ss-order-v1')||n('ss-order-diy-v1')))document.documentElement.classList.add('has-order')}catch(e){}</script>
+<section class="tool-head">
+  <div class="wrap">
+    <h1 class="h-page">Your order</h1>
+    <nav class="list-tabs" data-list-tabs aria-label="Which order" hidden>
+      <a href="{{ '/order/?list=trade' | relative_url }}" data-tab="trade">Florist order <span data-tab-count></span></a>
+      <a href="{{ '/order/?list=diy' | relative_url }}" data-tab="diy">DIY wedding order <span data-tab-count></span></a>
+    </nav>
+    <p class="tool-note">Send this as an order request. We confirm flowers, fulfillment, and the final total by email or phone before anything is charged.</p>
+  </div>
+</section>
+
+<div class="wrap order-layout" data-order-root>
+  <section class="order-items" aria-labelledby="items-h">
+    <h2 id="items-h" class="h-section" data-items-title>Flowers</h2>
+    <p class="sync-note" data-sync-note hidden></p>
+    <div class="locked-note" data-locked hidden>
+      <p>Florist prices need your trade code.</p>
+      <a class="btn btn-primary" href="{{ '/availability/' | relative_url }}">Enter trade code</a>
+    </div>
+    <ul class="line-list" data-lines></ul>
+    <div class="empty-order" data-empty-order>
+      <p>Nothing added yet.</p>
+      <div class="actions actions-tight">
+        <a class="btn btn-primary" href="{{ '/diy/' | relative_url }}">DIY wedding guide</a>
+        <a class="btn btn-ghost" href="{{ '/availability/' | relative_url }}">Florist list</a>
+      </div>
+      <p class="muted small">Looking for something not listed? Leave the order empty and tell us in the notes.</p>
+    </div>
+    <p class="add-more" data-add-more hidden><a class="link-arrow" data-add-more-link href="{{ '/availability/' | relative_url }}">Add more</a></p>
+  </section>
+
+  <form class="order-form" data-order-form novalidate>
+    <h2 class="h-section">Details</h2>
+
+    <div class="field">
+      <label for="f-business"><span data-business-label>Business name</span> <span class="req">Required</span></label>
+      <input id="f-business" name="business" type="text" autocomplete="organization" required>
+    </div>
+    <div class="field">
+      <label for="f-contact">Contact name</label>
+      <input id="f-contact" name="contact" type="text" autocomplete="name">
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email">
+      </div>
+      <div class="field">
+        <label for="f-phone">Phone</label>
+        <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+      </div>
+    </div>
+    <p class="hint">Email or phone so we can confirm.</p>
+    <div class="field">
+      <label for="f-date" data-date-label>Event or need-by date</label>
+      <input id="f-date" name="need_by" type="date">
+    </div>
+
+    <fieldset class="field fulfillment" data-fulfillment="trade">
+      <legend>Fulfillment</legend>
+      {%- for f in site.data.fulfillment %}
+      <label class="radio-card{% if forloop.first %} is-checked{% endif %}">
+        <input type="radio" name="fulfillment-trade" value="{{ f.id }}"{% if forloop.first %} checked{% endif %}>
+        <span class="radio-body">
+          <span class="radio-title">{{ f.label }}</span>
+          <span class="radio-detail">{{ f.detail }}</span>
+        </span>
+        <span class="radio-fee">{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% else %}{{ f.fee_label }}{% endif %}</span>
+      </label>
+      {%- endfor %}
+    </fieldset>
+
+    <fieldset class="field fulfillment" data-fulfillment="diy" hidden>
+      <legend>Pickup or delivery</legend>
+      {%- for f in site.data.fulfillment_diy %}
+      <label class="radio-card{% if forloop.first %} is-checked{% endif %}">
+        <input type="radio" name="fulfillment-diy" value="{{ f.id }}"{% if forloop.first %} checked{% endif %}>
+        <span class="radio-body">
+          <span class="radio-title">{{ f.label }}</span>
+          <span class="radio-detail">{{ f.detail }}</span>
+        </span>
+        <span class="radio-fee">{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% else %}{{ f.fee_label }}{% endif %}</span>
+      </label>
+      {%- endfor %}
+    </fieldset>
+
+    <div class="field">
+      <label for="f-notes">Notes</label>
+      <textarea id="f-notes" name="notes" rows="4" data-notes></textarea>
+    </div>
+
+    <div class="hp" aria-hidden="true">
+      <label for="f-website">Website</label>
+      <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div class="summary" data-summary>
+      <div class="summary-row"><span>Flowers</span><span data-subtotal>$0.00</span></div>
+      <div class="summary-row" data-row-labor hidden><span>Labor and packaging ({{ t.diy_labor_pct }}%)</span><span data-labor>$0.00</span></div>
+      <div class="summary-row" data-row-transport hidden><span>Transportation</span><span data-transport>$0.00</span></div>
+      <div class="summary-row"><span data-fee-label>Studio pickup</span><span data-fee>Free</span></div>
+      <div class="summary-row summary-total"><span>Estimated total</span><span data-total>$0.00</span></div>
+      <p class="minimum-warning" data-minimum hidden role="status"></p>
+    </div>
+
+    <p class="form-error" data-form-error role="alert" hidden></p>
+    <button class="btn btn-primary btn-block" type="submit" data-submit>Send order request</button>
+    {%- unless t.cutoff contains "[" or t.payment contains "[" %}
+    <p class="hint center">Order cutoff: {{ t.cutoff }}. Payment: {{ t.payment }}.</p>
+    {%- endunless %}
+  </form>
+
+  <section class="confirm" data-confirm hidden tabindex="-1" aria-live="polite">
+    <p class="eyebrow">Order request sent</p>
+    <h2 class="h-display">Thank you. We have it.</h2>
+    <p data-confirm-text>We will confirm your flowers and total shortly.</p>
+    <p class="muted" data-confirm-ref></p>
+    <div class="actions">
+      <a class="btn btn-primary" href="{{ '/' | relative_url }}">Back to home</a>
+    </div>
+  </section>
+</div>
+
+{% include fallback-data.html %}

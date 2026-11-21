@@ -1,0 +1,27 @@
+# Photo slots. Drop a real photo into assets/images/ with the same file name
+# (or change src here) and update the alt text to describe the actual photo.
+hero:
+  src: /assets/images/hero.jpg
+  alt: Placeholder. Garden roses and dahlias freshly cut, laid out on a worktable.
+  width: 1600
+  height: 1067
+farm:
+  src: /assets/images/farm.jpg
+  alt: Placeholder. Rows of dahlias on the SierraStems farm in Nevada County.
+  width: 1600
+  height: 1067
+cooler:
+  src: /assets/images/cooler.jpg
+  alt: Placeholder. Buckets of stems sorted by order in the walk-in cooler.
+  width: 1200
+  height: 1500
+coast:
+  src: /assets/images/central-coast.jpg
+  alt: Placeholder. Greenhouses at a partner grower on the Central Coast.
+  width: 1600
+  height: 1067
+specialty:
+  src: /assets/images/specialty.jpg
+  alt: Placeholder. Textural stems, pods, and garden roses grouped by color.
+  width: 1200
+  height: 1500

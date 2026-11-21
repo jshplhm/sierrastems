@@ -1,0 +1,70 @@
+---
+title: Sourcing and Seasons, California Grown Flowers
+description: Where SierraStems flowers grow. Our Nevada County farm in season, Central Coast growers in Monterey County off season, and a month by month seasonality chart.
+permalink: /sourcing/
+body_class: page-sourcing
+---
+<section class="page-head wrap">
+  <p class="eyebrow">Sourcing</p>
+  <h1 class="h-page">Every source named.</h1>
+  <p class="lede">In season, the florist list comes from our own farm in Nevada County. Off season, we buy direct from California growers on the Central Coast. The list names the farm and region for every item.</p>
+  <p class="muted small">The DIY wedding guide is sourced separately and includes some imported flowers, such as Ecuadorian roses. Its item names say so.</p>
+</section>
+
+<section class="section wrap split">
+  <div class="split-media">{% include photo.html slot="farm" eager=true sizes="(min-width: 960px) 50vw, 100vw" %}</div>
+  <div class="split-copy">
+    <p class="eyebrow">In season</p>
+    <h2 class="h-display">Our farm, Nevada County</h2>
+    <p>We grow for designers: dahlias, specialty and textural stems, and the filler that finishes a piece. Stems are cut on the farm and held in our walk-in cooler in Nevada City until pickup or delivery.</p>
+    <p>Next season the farm adds fritillaria, allium, ranunculus, and lisianthus alongside dahlias and filler flowers.</p>
+    <p class="note-badge"><span class="badge">Nevada County grown</span> Stems with this badge have no order minimum.</p>
+  </div>
+</section>
+
+<section class="section wrap split split-reverse">
+  <div class="split-media">{% include photo.html slot="coast" sizes="(min-width: 960px) 50vw, 100vw" %}</div>
+  <div class="split-copy">
+    <p class="eyebrow">Off season</p>
+    <h2 class="h-display">Partner growers, Central Coast</h2>
+    <p>When our fields are resting, we source direct from growers in Monterey County. That is where our garden roses come from, along with early ranunculus and winter foliage.</p>
+    <p>Buying direct means we know who grew it, when it was cut, and how it traveled. Off-season orders carry a {% include money.html n=site.terms.offseason_minimum %} minimum, sized for larger weddings.</p>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <p class="eyebrow">Seasonality</p>
+    <h2 class="h-display">When it is available</h2>
+    <p class="muted">Typical windows. Weather moves them a few weeks either way; the weekly list is always the source of truth.</p>
+    <div class="season-legend" aria-hidden="true">
+      <span><i class="sw sw-farm"></i>Our farm</span>
+      <span><i class="sw sw-partner"></i>California partner growers</span>
+    </div>
+    <div class="season-scroll">
+      <table class="season">
+        <caption class="sr-only">Months each crop is available, from our farm or partner growers</caption>
+        <thead>
+          <tr><th scope="col">Crop</th>{% assign months = "J,F,M,A,M,J,J,A,S,O,N,D" | split: "," %}{% assign full = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," %}{% for m in months %}<th scope="col"><abbr title="{{ full[forloop.index0] }}">{{ m }}</abbr></th>{% endfor %}</tr>
+        </thead>
+        <tbody>
+          {%- for c in site.data.seasonality %}
+          <tr>
+            <th scope="row">{{ c.crop }}</th>
+            {%- for i in (1..12) -%}
+              {%- if c.farm contains i -%}<td class="s-farm"><span class="sr-only">Our farm</span></td>
+              {%- elsif c.partner contains i -%}<td class="s-partner"><span class="sr-only">Partner growers</span></td>
+              {%- else -%}<td><span class="sr-only">Not available</span></td>{%- endif -%}
+            {%- endfor %}
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap area">
+  <h2 class="h-display">See what is cutting this week.</h2>
+  <div class="actions"><a class="btn btn-primary" href="{{ '/availability/' | relative_url }}">Florist list</a></div>
+</section>

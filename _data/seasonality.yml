@@ -1,0 +1,26 @@
+# Typical windows by month (1 = January). farm = our Nevada County farm,
+# partner = California partner growers. Edit as seasons firm up.
+- crop: Ranunculus
+  farm: [4, 5, 6]
+  partner: [1, 2, 3, 4, 12]
+- crop: Fritillaria
+  farm: [4, 5]
+  partner: []
+- crop: Allium
+  farm: [5, 6, 7]
+  partner: []
+- crop: Garden roses
+  farm: []
+  partner: [4, 5, 6, 7, 8, 9, 10, 11]
+- crop: Lisianthus
+  farm: [7, 8, 9]
+  partner: [6, 10]
+- crop: Dahlias
+  farm: [7, 8, 9, 10]
+  partner: [11]
+- crop: Filler flowers
+  farm: [6, 7, 8, 9]
+  partner: [3, 4, 5, 10]
+- crop: Textural stems and foliage
+  farm: [6, 7, 8, 9, 10]
+  partner: [1, 2, 3, 4, 5, 11, 12]

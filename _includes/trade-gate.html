@@ -1,0 +1,11 @@
+<div class="trade-gate" data-trade-gate>
+  <h2 class="h-display">Enter your trade code to see wholesale prices.</h2>
+  <form class="gate-form" data-gate-form novalidate>
+    <label for="trade-code" class="sr-only">Trade code</label>
+    <input id="trade-code" name="code" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" placeholder="Trade code" required>
+    <button class="btn btn-primary" type="submit">See prices</button>
+  </form>
+  <p class="form-error" data-gate-error role="alert" hidden>That code does not match. Check with us for the current code.</p>
+  <p class="muted small">No code yet? <a href="{{ '/contact/' | relative_url }}">Contact us</a> to set up a trade account.</p>
+  <p class="gate-diy">Planning your own wedding flowers? <a class="link-arrow" href="{{ '/diy/' | relative_url }}">See the DIY price guide</a></p>
+</div>

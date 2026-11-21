@@ -1,0 +1,2 @@
+{%- assign n = include.count | default: 6 -%}
+{%- for i in (1..n) -%}<li class="skeleton" aria-hidden="true"><span></span><span></span></li>{%- endfor -%}

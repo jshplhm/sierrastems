@@ -1,0 +1,23 @@
+# Fulfillment options. fee: a number in dollars, 0 for free, or leave empty and set
+# fee_label for options that are quoted per order.
+- id: studio
+  label: Pickup, Nevada City studio
+  short: Studio pickup
+  fee: 0
+  detail: Free. Stems wait in our walk-in cooler.
+- id: farm
+  label: Farm pickup service
+  short: Farm pickup
+  fee: 25
+  detail: We collect from nearby partner farms and bundle it with your order.
+- id: sacramento
+  label: Delivery, Sacramento
+  short: Sacramento delivery
+  fee: 55
+  detail: Delivered to your Sacramento studio.
+- id: tahoe
+  label: Delivery, Tahoe and Truckee
+  short: Tahoe delivery
+  fee:
+  fee_label: Quoted per order
+  detail: Priced by location and order size.

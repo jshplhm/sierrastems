@@ -1,0 +1,81 @@
+# SierraStems site settings
+# Values in [BRACKETS] are placeholders. Fill them in before launch.
+# Restart `bundle exec jekyll serve` after editing this file.
+
+title: SierraStems
+tagline: California Grown Wholesale Flowers
+description: >-
+  Wholesale flowers in Nevada City for florists and DIY weddings in Lake Tahoe, Truckee,
+  Nevada County, and Sacramento. A weekly California grown list for the trade and a
+  monthly price guide for couples doing their own flowers.
+url: "https://sierrastems.com"   # your live domain, no trailing slash
+baseurl: ""
+lang: en_US
+logo: /assets/images/og-default.jpg
+social:
+  name: SierraStems
+  links: []   # e.g. - https://www.instagram.com/yourhandle
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      image: /assets/images/og-default.jpg
+
+# ---- Live data -------------------------------------------------------------
+# Published Google Sheet CSV for the weekly list (see README, "Weekly availability").
+# Leave empty to show the sample list in _data/availability.yml.
+availability_csv_url: ""
+
+# Trade code for florist prices, stored as a SHA-256 hash (see README, "Trade code").
+# To change it: printf "newcode" | shasum -a 256, then paste the hash here.
+trade_code_sha256: "f19a336b55b94a20ad07766814fa4870260140229f5ec559de4221031388a045"
+
+# DIY price guide (see README, "DIY price guide"). Either set the Google Sheet ID and
+# name each tab after its month (January, February, ...), or paste a published CSV
+# link per month under diy_csv_urls. Leave both empty to show the sample guide.
+diy_sheet_id: ""
+diy_csv_urls: {}
+#  November: "https://docs.google.com/spreadsheets/d/e/.../pub?gid=123&single=true&output=csv"
+
+# Google Apps Script web app URL that receives orders (see README, "Orders").
+# Leave empty and the order page offers an email fallback instead.
+order_endpoint: ""
+
+# ---- Business details ------------------------------------------------------
+business:
+  name: SierraStems
+  email: "[EMAIL]"
+  phone: "[PHONE]"
+  instagram: "[HANDLE]"        # handle without the @
+  city: Nevada City
+  state: CA
+  postal_code: "95959"
+  country: US
+  service_area:
+    - Lake Tahoe
+    - Truckee
+    - Nevada County
+    - Sacramento
+
+# ---- Terms (shown on Terms, Order, and the home page) ----------------------
+terms:
+  offseason_minimum: 1000      # florists: off-season orders
+  diy_minimum: 500             # DIY weddings
+  diy_transport_fee: 50
+  diy_labor_pct: 15            # labor and packaging, percent of flowers
+  cutoff: "[DAY/TIME]"
+  payment: "[TERMS]"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - apps-script/
+  - vendor/
+  - .github/

@@ -1,0 +1,6 @@
+name,variety,category,color,stem_length,unit,price,qty_available,farm,region,nevada_county,image_url,active,updated
+Garden Rose,Juliet,focal,Peach,50 cm,Bunch of 10,42,24,Central Coast partner grower,Monterey County,FALSE,,TRUE,2026-11-20
+Dahlia,Café au Lait,focal,Blush,45 cm,Bunch of 5,18,40,SierraStems Farm,Nevada County,TRUE,,TRUE,2026-11-20
+Cosmos,Double Click Cranberries,filler,Burgundy,50 cm,Bunch of 10,12,25,SierraStems Farm,Nevada County,TRUE,,TRUE,2026-11-19
+Scabiosa Pods,Starflower,textural,Green,45 cm,Bunch of 10,14,30,SierraStems Farm,Nevada County,TRUE,,TRUE,2026-11-19
+Gardenia,,focal,White,25 cm,Stem,12,15,Central Coast partner grower,Monterey County,FALSE,,FALSE,2026-11-13
