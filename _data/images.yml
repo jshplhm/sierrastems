@@ -1,7 +1,7 @@
 # Photo slots. Drop a real photo into assets/images/ with the same file name
 # (or change src here) and update the alt text to describe the actual photo.
 hero:
-  src: /assets/images/hero.jpg
+  src: /assets/images/hero-dahlias.jpg
   alt: Close-up of peach and white dahlias with blushing petal tips.
   width: 1125
   height: 1500
