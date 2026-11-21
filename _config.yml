@@ -3,11 +3,11 @@
 # Restart `bundle exec jekyll serve` after editing this file.
 
 title: SierraStems
-tagline: California Grown Wholesale Flowers
+tagline: Wholesale Flowers for the Sierras
 description: >-
-  Wholesale flowers in Nevada City for florists and DIY weddings in Lake Tahoe, Truckee,
-  Nevada County, and Sacramento. A weekly California grown list for the trade and a
-  monthly price guide for couples doing their own flowers.
+  Wholesale flowers for the Sierras. A weekly list for florists and event designers in
+  Lake Tahoe, Truckee, Nevada County, and Sacramento, and a monthly price guide for
+  couples doing their own wedding flowers.
 url: "https://sierrastems.com"   # your live domain, no trailing slash
 baseurl: ""
 lang: en_US
