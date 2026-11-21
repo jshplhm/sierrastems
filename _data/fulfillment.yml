@@ -11,6 +11,11 @@
   fee: 25
   fee_suffix: per farm
   detail: We collect from nearby partner farms and bundle it with your order. Fee is per farm.
+- id: supplier
+  label: Wholesale supplier pickup
+  short: Supplier pickup
+  fee: 50
+  detail: We pick up your order from other wholesale suppliers and meet you at a public meetup spot.
 - id: sacramento
   label: Delivery, Sacramento
   short: Sacramento delivery
