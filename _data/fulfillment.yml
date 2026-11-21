@@ -21,9 +21,3 @@
   short: Sacramento delivery
   fee: 55
   detail: Delivered to your Sacramento studio.
-- id: tahoe
-  label: Delivery, Tahoe and Truckee
-  short: Tahoe delivery
-  fee:
-  fee_label: Quoted per order
-  detail: Priced by location and order size.

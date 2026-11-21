@@ -31,7 +31,6 @@ Search the repo for `[` placeholders:
 | `_config.yml` → `business` | email, phone, Instagram handle |
 | `_config.yml` → `terms` | order cutoff, payment terms; DIY minimum and fees are set to $500 / $50 / 15% |
 | `_config.yml` → `url` | your real domain |
-| `_data/fulfillment.yml` | Tahoe delivery price (now "Quoted per order") |
 | `apps-script/Code.gs` | `ORDER_EMAIL` |
 | `_data/images.yml` + `assets/images/` | real photos and alt text |
 | `favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, `assets/images/og-default.jpg` | logo and share image |
