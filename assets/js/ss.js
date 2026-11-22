@@ -304,15 +304,20 @@
   function loadDiy(month) {
     if (diyCache[month]) return diyCache[month];
     var url = diyUrl(month);
-    function sample(source, err) {
-      var el = document.getElementById('ss-diy-sample'), rows = [];
-      try { rows = JSON.parse(el.textContent) || []; } catch (e) { rows = []; }
-      return { month: month, items: rows.map(function (r) { return normalizeDiy(r, month); }), note: '', source: source, error: err || null };
-    }
     if (!url) {
-      /* Sample only while nothing is set up; once the guide is connected, a month with no link is just not posted. */
-      var configured = !!C.diySheetId || Object.keys(C.diyUrls || {}).length > 0;
-      diyCache[month] = Promise.resolve(configured ? { month: month, items: [], note: '', source: 'missing', error: null } : sample('sample'));
+      /* Posted months ship with the site as assets/data/diy/<Month>.json. Any other month is not posted yet. */
+      if ((C.diyMonths || []).indexOf(month) === -1) {
+        diyCache[month] = Promise.resolve({ month: month, items: [], note: '', source: 'missing', error: null });
+        return diyCache[month];
+      }
+      diyCache[month] = fetch(C.diyData + encodeURIComponent(month) + '.json')
+        .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
+        .then(function (d) { return { month: month, items: (d.items || []).map(function (r) { return normalizeDiy(r, month); }), note: '', source: 'live', error: null }; })
+        .catch(function (err) {
+          if (window.console) console.warn('[SierraStems] DIY list for ' + month + ' did not load:', err);
+          delete diyCache[month];
+          return { month: month, items: [], note: '', source: 'missing', error: err };
+        });
       return diyCache[month];
     }
     var ctrl = window.AbortController ? new AbortController() : null;

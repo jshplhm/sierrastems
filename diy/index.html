@@ -21,7 +21,7 @@ scripts:
       <span class="select-label">Wedding month</span>
       <select name="month" data-month>
         {%- assign months = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," -%}
-        {%- for m in months %}<option value="{{ m }}">{{ m }}</option>{% endfor -%}
+        {%- for m in months %}<option value="{{ m }}">{{ m }}{% unless site.data.diy_months contains m %}, coming soon{% endunless %}</option>{% endfor -%}
       </select>
     </label>
     <label class="search">
@@ -44,7 +44,7 @@ scripts:
     <ul class="stem-list" data-list>{% include stem-skeleton.html count=8 %}</ul>
   </div>
   <div class="empty" data-empty hidden></div>
-  <noscript><p>Turn on JavaScript to see the price guide, or <a href="{{ '/contact/' | relative_url }}">contact us</a>.</p></noscript>
+  <noscript><p>Turn on JavaScript to see the wholesale list, or <a href="{{ '/contact/' | relative_url }}">contact us</a>.</p></noscript>
 </section>
 
 <div class="order-bar" data-order-bar aria-live="polite">

@@ -12,7 +12,7 @@ _config.yml              Site settings: sheet URL, order URL, contact details, t
 _data/availability.yml   Sample stems, shown only if the live sheet can't be read
 _data/fulfillment.yml    Florist pickup and delivery options and fees
 _data/fulfillment_diy.yml  DIY pickup and delivery options
-_data/diy_sample.yml     Sample DIY guide, shown only until the DIY sheet is connected
+_data/diy_months.yml     Months with a posted wholesale list; prices in assets/data/diy/<Month>.json
 _data/seasonality.yml    The month chart on /sourcing/
 _data/images.yml         Photo slots: file name and alt text for each
 assets/images/           Drop real photos here
@@ -121,6 +121,8 @@ Paste the hash into `_config.yml` and push. Everyone who entered the old code is
 This keeps brides from casually seeing wholesale prices. It is not real security: the published florist sheet link is in the page source, and anyone determined can open it. Every order is a request, and Brittany confirms the business before anything is final.
 
 ## DIY price guide (Google Sheet)
+
+Today the posted months live in the repo: one file per month at `assets/data/diy/<Month>.json`, listed in `_data/diy_months.yml`. Months not listed show "coming soon" in the month menu and a "not posted yet" note. To add a month, export its tab (Category, Item, Stems/Bunch, Price), write the JSON file, and add the month to the list. The Google Sheet route below replaces this once Brittany's guide is a shared Google Sheet.
 
 The DIY guide has one tab per month. Each tab has a title row, a note row, then `Category, Item, Stems/Bunch, Price`. The site finds the header row itself and ignores the rows above it.
 

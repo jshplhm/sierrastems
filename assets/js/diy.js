@@ -115,13 +115,12 @@
       if (!items.length) {
         list.innerHTML = '';
         countEl.textContent = '';
-        emptyEl.innerHTML = 'The ' + esc(month) + ' guide is not posted yet. <a href="' + esc(SS.config.orderUrl.replace(/order\/$/, 'contact/')) + '">Contact us</a> for ' + esc(month) + ' prices, or pick another month.';
+        emptyEl.innerHTML = (data.error ? 'The ' + esc(month) + ' list did not load. Refresh to try again, or ' : 'The ' + esc(month) + ' list is not posted yet. ') + '<a href="' + esc(SS.config.orderUrl.replace(/order\/$/, 'contact/')) + '">' + (data.error ? 'contact us' : 'Contact us') + '</a> for ' + esc(month) + ' prices, or pick another month.';
         emptyEl.hidden = false;
         return;
       }
       emptyEl.hidden = true;
       render();
-      if (data.source === 'sample') countEl.textContent += '. Sample guide.';
     });
   }
 
