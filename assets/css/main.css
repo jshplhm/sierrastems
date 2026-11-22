@@ -467,3 +467,15 @@ body.has-order-bar .site-footer { padding-bottom: calc(64px + 32px); }
 .collective { max-width: 40rem; margin: 0 0 40px; }
 .collective .lede { margin-top: 12px; }
 .season-section .preview-head { margin-top: 0; }
+
+/* Lists without color, length, or quantity data (Brittany's weekly tab). */
+.no-color .c-color, .no-length .c-length, .no-avail .c-avail { display: none; }
+.no-color.no-length .c-meta > span:not(:first-child)::before { content: none; }
+@media (min-width: 1000px) {
+  .stem-table.no-color.no-length.no-avail .stem-header > span:nth-child(3),
+  .stem-table.no-color.no-length.no-avail .stem-header > span:nth-child(4),
+  .stem-table.no-color.no-length.no-avail .stem-header > span:nth-child(7) { display: none; }
+  .stem-table.no-color.no-length.no-avail:not(.has-images) .stem-header,
+  .stem-table.no-color.no-length.no-avail:not(.has-images) .stem-row { grid-template-columns: minmax(240px, 3fr) 110px 120px minmax(160px, 1.5fr) 128px; }
+  .stem-table.no-color.no-length.no-avail .stem-header > span:nth-child(6) { text-align: right; }
+}

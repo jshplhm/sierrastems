@@ -199,6 +199,20 @@
     item.id = slug([item.name, item.variety, item.color, item.unit, item.farm].join(' '));
     return item;
   }
+  /* Brittany's weekly tab: Item, Price, Notes, Photo Links, County of origin. */
+  function fromWeeklyTab(r) {
+    var notes = String(r.notes || '').trim();
+    var county = String(r.county_of_origin || r.county || '').trim();
+    if (county && !/county$/i.test(county)) county += ' County';
+    var item = String(r.item || '').trim();
+    var perStem = /per stem/i.test(notes + ' ' + item);
+    return {
+      name: item.replace(/\s*\(per stem\)\s*$/i, ''),
+      variety: notes.replace(/,?\s*priced per stem/i, '').replace(/^priced per stem\.?$/i, '').trim(),
+      unit: perStem ? 'Stem' : 'Bunch',
+      price: r.price, region: county, active: true
+    };
+  }
   function finish(rows, source, error) {
     var items = rows.map(normalize).filter(function (i) { return i.active && i.name; });
     var updated = null;
@@ -228,6 +242,7 @@
       .then(function (text) {
         if (/^\s*</.test(text)) throw new Error('Not a CSV. Check the published link format.');
         var rows = parseCSV(text);
+        if (rows.length && !('name' in rows[0]) && 'item' in rows[0]) rows = rows.map(fromWeeklyTab);
         if (!rows.length || !('name' in rows[0])) throw new Error('CSV has no name column');
         return finish(rows, 'live');
       })
@@ -346,7 +361,7 @@
   }
 
   function updatedText(data) {
-    var t = data.updated ? 'Last updated: ' + formatDate(data.updated) : '';
+    var t = data.updated ? 'Last updated: ' + formatDate(data.updated) : (C.floristLabel && data.source !== 'sample' ? C.floristLabel : '');
     if (data.source === 'sample') t = (t ? t + '. ' : '') + 'Sample list.';
     if (data.source === 'fallback') t = (t ? t + '. ' : '') + 'Showing our saved list; the live list did not load.';
     return t;

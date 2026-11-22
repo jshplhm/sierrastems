@@ -1,114 +1,434 @@
-# Sample list. The site shows this only when the Google Sheet CSV is not set
-# or cannot be reached. Same columns as docs/availability-template.csv.
-- name: Dahlia
-  variety: Café au Lait
-  category: focal
-  color: Blush
-  stem_length: 45 cm
-  unit: Bunch of 5
-  price: 18
-  qty_available: 40
-  farm: Sierra Stems Farm
-  region: Nevada County
-  nevada_county: true
-  image_url:
-  active: true
-  updated: "2026-11-20"
-- name: Dahlia
-  variety: Karma Choc
-  category: focal
-  color: Burgundy
-  stem_length: 50 cm
-  unit: Bunch of 5
-  price: 16
-  qty_available: 30
-  farm: Sierra Stems Farm
-  region: Nevada County
-  nevada_county: true
-  image_url:
-  active: true
-  updated: "2026-11-20"
-- name: Ranunculus
-  variety: Butterfly Hades
-  category: focal
-  color: Mauve
-  stem_length: 40 cm
-  unit: Bunch of 10
-  price: 22
-  qty_available: 35
-  farm: Central Coast partner grower
-  region: Monterey County
-  nevada_county: false
-  image_url:
-  active: true
-  updated: "2026-11-20"
-- name: Lisianthus
-  variety: Rosanne Brown
-  category: focal
-  color: Mauve
-  stem_length: 60 cm
-  unit: Bunch of 10
-  price: 24
-  qty_available: 20
-  farm: Sierra Stems Farm
-  region: Nevada County
-  nevada_county: true
-  image_url:
-  active: true
-  updated: "2026-11-19"
-- name: Cosmos
-  variety: Double Click Cranberries
-  category: filler
-  color: Burgundy
-  stem_length: 50 cm
-  unit: Bunch of 10
-  price: 12
-  qty_available: 25
-  farm: Sierra Stems Farm
-  region: Nevada County
-  nevada_county: true
-  image_url:
-  active: true
-  updated: "2026-11-19"
-- name: Scabiosa Pods
-  variety: Starflower
-  category: textural
-  color: Green
-  stem_length: 45 cm
-  unit: Bunch of 10
-  price: 14
-  qty_available: 30
-  farm: Sierra Stems Farm
-  region: Nevada County
-  nevada_county: true
-  image_url:
-  active: true
-  updated: "2026-11-19"
-- name: Eucalyptus
-  variety: Silver Dollar
-  category: textural
-  color: Green
-  stem_length: 70 cm
-  unit: Bunch of 10
-  price: 15
-  qty_available: 50
-  farm: Central Coast partner grower
-  region: Monterey County
-  nevada_county: false
-  image_url:
-  active: true
-  updated: "2026-11-18"
-- name: Sweet Pea
-  variety: Mixed Spencer
-  category: filler
-  color: Lavender
-  stem_length: 35 cm
-  unit: Bunch of 10
-  price: 16
-  qty_available: 22
-  farm: Central Coast partner grower
-  region: Monterey County
-  nevada_county: false
-  image_url:
-  active: true
-  updated: "2026-11-18"
+# Saved copy of Brittany's florist list (Week of 11/23 tab). The site shows this only if the live sheet cannot be reached.
+- {"name": "Alstroemeria", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Alstroemeria, Green Planet", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Amaranthus", "variety": "Limited grower availability", "unit": "Bunch", "price": 10.0, "region": "Monterey County", "active": true}
+- {"name": "Ammi Majus Chocolate", "variety": "", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Asclepia", "variety": "", "unit": "Bunch", "price": 9.5, "region": "Monterey County", "active": true}
+- {"name": "Bupleurum", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Calla Mini, White & Flame", "variety": "", "unit": "Stem", "price": 4.0, "region": "Monterey County", "active": true}
+- {"name": "Celosia Coxcomb red", "variety": "", "unit": "Bunch", "price": 10.0, "region": "Monterey County", "active": true}
+- {"name": "Chocolate Lace", "variety": "", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Cornflower Blue, Pink, White", "variety": "", "unit": "Bunch", "price": 11.0, "region": "Monterey County", "active": true}
+- {"name": "Craspedia", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Dianthus Gipsy", "variety": "", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Dianthus Green Trick", "variety": "", "unit": "Bunch", "price": 10.0, "region": "Monterey County", "active": true}
+- {"name": "Eriostemon Budded", "variety": "", "unit": "Bunch", "price": 10.0, "region": "Monterey County", "active": true}
+- {"name": "Euphorbia Snow in the Mountain", "variety": "Limited grower availability", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Feverfew White Daisy", "variety": "", "unit": "Bunch", "price": 8.5, "region": "Monterey County", "active": true}
+- {"name": "Gomphrena", "variety": "", "unit": "Bunch", "price": 8.5, "region": "Monterey County", "active": true}
+- {"name": "Hydrangea, Pink", "variety": "", "unit": "Bunch", "price": 4.0, "region": "Monterey County", "active": true}
+- {"name": "Kale, Green", "variety": "", "unit": "Bunch", "price": 12.0, "region": "Monterey County", "active": true}
+- {"name": "Kale, Large", "variety": "", "unit": "Bunch", "price": 3.0, "region": "Monterey County", "active": true}
+- {"name": "Larkspur", "variety": "Limited grower availability", "unit": "Bunch", "price": 14.0, "region": "Monterey County", "active": true}
+- {"name": "Lepidium / Penny Cress", "variety": "", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Limonium Hybrid", "variety": "Limited grower availability", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Lisianthus", "variety": "Limited grower availability", "unit": "Bunch", "price": 20.0, "region": "Monterey County", "active": true}
+- {"name": "Marigold, Orange", "variety": "", "unit": "Bunch", "price": 6.5, "region": "Monterey County", "active": true}
+- {"name": "Nigella Blue & White", "variety": "", "unit": "Bunch", "price": 11.0, "region": "Monterey County", "active": true}
+- {"name": "Orlaya", "variety": "Limited grower availability", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Phacelia Lavender", "variety": "", "unit": "Bunch", "price": 10.0, "region": "Monterey County", "active": true}
+- {"name": "Pods, Eucalyptus Silver Bells", "variety": "Limited grower availability", "unit": "Bunch", "price": 10.0, "region": "Monterey County", "active": true}
+- {"name": "Pods, Okra", "variety": "", "unit": "Bunch", "price": 10.0, "region": "Monterey County", "active": true}
+- {"name": "Pods, Scabiosa", "variety": "", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Poppies Icelandic", "variety": "", "unit": "Bunch", "price": 10.0, "region": "Monterey County", "active": true}
+- {"name": "Queen Anne's lace", "variety": "", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Riceflower, Pink", "variety": "", "unit": "Bunch", "price": 10.0, "region": "Monterey County", "active": true}
+- {"name": "Safflower Orange", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Scabiosa Caucasica", "variety": "Limited grower availability", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Scabiosa, Scoop", "variety": "", "unit": "Bunch", "price": 10.0, "region": "Monterey County", "active": true}
+- {"name": "Statice, Seafoam", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Strawflower", "variety": "Limited grower availability", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Tweedia", "variety": "", "unit": "Bunch", "price": 10.0, "region": "Monterey County", "active": true}
+- {"name": "Veronica", "variety": "", "unit": "Bunch", "price": 7.0, "region": "Monterey County", "active": true}
+- {"name": "Yarrow Pink, Peach, Red and White", "variety": "", "unit": "Bunch", "price": 8.5, "region": "Monterey County", "active": true}
+- {"name": "Saxicola", "variety": "", "unit": "Bunch", "price": 7.5, "region": "Monterey County", "active": true}
+- {"name": "Acacia Feather Green & Purple", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Acacia Purple Feather", "variety": "", "unit": "Bunch", "price": 7.0, "region": "Monterey County", "active": true}
+- {"name": "Acacia, Knife Mini", "variety": "Limited grower availability", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Agonis, Burgundy", "variety": "", "unit": "Bunch", "price": 11.0, "region": "Monterey County", "active": true}
+- {"name": "Berried - Chinese Pistachio Berry & Foliage", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Berried - Dates Orange", "variety": "", "unit": "Bunch", "price": 7.5, "region": "Monterey County", "active": true}
+- {"name": "Berried - Pepperberry Red", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Berried - Privet (showing some color)", "variety": "Limited grower availability", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Boxwood", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Bush Ivy Green", "variety": "", "unit": "Bunch", "price": 7.0, "region": "Monterey County", "active": true}
+- {"name": "Camellia", "variety": "", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Cattails", "variety": "", "unit": "Bunch", "price": 7.0, "region": "Monterey County", "active": true}
+- {"name": "Curly Willow Tips", "variety": "", "unit": "Bunch", "price": 8.5, "region": "Monterey County", "active": true}
+- {"name": "Curly Willow, Green", "variety": "", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Curly Willow, Med/Tall", "variety": "", "unit": "Bunch", "price": 8.5, "region": "Monterey County", "active": true}
+- {"name": "Date Palm Green", "variety": "", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Dusty Miller", "variety": "", "unit": "Bunch", "price": 7.0, "region": "Monterey County", "active": true}
+- {"name": "Eucalyptus, Baby Blue", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Eucalyptus, Parvifolia", "variety": "Limited grower availability", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Eucalyptus, Seeded", "variety": "Limited grower availability", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Eucalyptus, Silver Dollar", "variety": "Limited grower availability", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Eucalyptus, True Blue", "variety": "", "unit": "Bunch", "price": 7.0, "region": "Monterey County", "active": true}
+- {"name": "Eucalyptus, Willow", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Euonymus", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Euonymus Gold or Silver Variegated", "variety": "", "unit": "Bunch", "price": 7.0, "region": "Monterey County", "active": true}
+- {"name": "Euonymus Silver Variegated, 5'+", "variety": "", "unit": "Bunch", "price": 11.0, "region": "Monterey County", "active": true}
+- {"name": "Flax Green and Brown", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Fruited Pomegranates & Persimmons", "variety": "", "unit": "Bunch", "price": 10.0, "region": "Monterey County", "active": true}
+- {"name": "Genestra Foliage", "variety": "", "unit": "Bunch", "price": 10.0, "region": "Monterey County", "active": true}
+- {"name": "Grass, Broomcorn", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Grass, Bunnytail", "variety": "", "unit": "Bunch", "price": 7.5, "region": "Monterey County", "active": true}
+- {"name": "Grass, Millet Brown", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Grass, Millet Green Hanging", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Grass, Oat & Wheat", "variety": "Limited grower availability", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Grass, Pampas Dry", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Grass, Pampas Fresh", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Grass, Pampas Fresh 6ft", "variety": "", "unit": "Bunch", "price": 10.0, "region": "Monterey County", "active": true}
+- {"name": "Grass, Restio", "variety": "Limited grower availability", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Grass, Silver Feather", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Grass, Sorghum", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Grass, Wheat", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Herb - Geranium Green, Chocolate", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Herbs Bay Leaf", "variety": "", "unit": "Bunch", "price": 7.0, "region": "Monterey County", "active": true}
+- {"name": "Holly Green, Variegated - No Berries", "variety": "", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Honey Bracelet", "variety": "", "unit": "Bunch", "price": 6.0, "region": "Monterey County", "active": true}
+- {"name": "Ivy Bush Green", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Ivy Cut Green, Variegated", "variety": "", "unit": "Bunch", "price": 8.5, "region": "Monterey County", "active": true}
+- {"name": "Jasmine Vine", "variety": "", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Kiwi Vine", "variety": "", "unit": "Bunch", "price": 7.0, "region": "Monterey County", "active": true}
+- {"name": "Lavender, Dry English", "variety": "", "unit": "Bunch", "price": 19.5, "region": "Monterey County", "active": true}
+- {"name": "Lavender, French/English", "variety": "Limited grower availability", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Leptospermum Foliage", "variety": "", "unit": "Bunch", "price": 7.0, "region": "Monterey County", "active": true}
+- {"name": "Leucadendron, Candle", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Leucadendron, Jester Mini", "variety": "", "unit": "Bunch", "price": 10.0, "region": "Monterey County", "active": true}
+- {"name": "Leucadendron, Jubilee / Rising Sun", "variety": "", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Leucadendron, Safari Sunset", "variety": "", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Liquid Amber", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Luma", "variety": "", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Luma (Goliath, 48-52\")", "variety": "", "unit": "Bunch", "price": 12.0, "region": "Monterey County", "active": true}
+- {"name": "Magnolia", "variety": "", "unit": "Bunch", "price": 7.0, "region": "Monterey County", "active": true}
+- {"name": "Magnolia Tips", "variety": "", "unit": "Bunch", "price": 7.0, "region": "Monterey County", "active": true}
+- {"name": "Mint", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Myrtle", "variety": "", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Myrtle, Mini", "variety": "", "unit": "Bunch", "price": 7.0, "region": "Monterey County", "active": true}
+- {"name": "Oak Leaves", "variety": "", "unit": "Bunch", "price": 7.0, "region": "Monterey County", "active": true}
+- {"name": "Olive", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Olive Branches (Goliath, 48-52\")", "variety": "", "unit": "Bunch", "price": 12.0, "region": "Monterey County", "active": true}
+- {"name": "Pepperberry, Brazilian Upright", "variety": "", "unit": "Bunch", "price": 7.0, "region": "Monterey County", "active": true}
+- {"name": "Pine Aussi", "variety": "", "unit": "Bunch", "price": 7.5, "region": "Monterey County", "active": true}
+- {"name": "Pittosporum, Green & Variegated", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Pittosporum, Mini Green & Variegated", "variety": "", "unit": "Bunch", "price": 8.5, "region": "Monterey County", "active": true}
+- {"name": "Pussy Willow, Wild Med", "variety": "", "unit": "Bunch", "price": 9.5, "region": "Monterey County", "active": true}
+- {"name": "Ribbon Bush", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Rosemary", "variety": "", "unit": "Bunch", "price": 6.0, "region": "Monterey County", "active": true}
+- {"name": "Ruscus Israel", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Ruscus, Italian 60cm", "variety": "", "unit": "Bunch", "price": 21.0, "region": "Monterey County", "active": true}
+- {"name": "Ruscus, Italian 80cm+", "variety": "", "unit": "Bunch", "price": 22.5, "region": "Monterey County", "active": true}
+- {"name": "Salal, Long", "variety": "", "unit": "Bunch", "price": 14.0, "region": "Monterey County", "active": true}
+- {"name": "Salal Tips", "variety": "", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
+- {"name": "Sumac", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Wooly Bush", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Xmas Greens, Cedar Blue Atlas", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Xmas Greens, Cedar Incense", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Xmas Greens, Deodora", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Xmas Greens Mistletoe", "variety": "Pre-order 24 hours", "unit": "Bunch", "price": 9.5, "region": "Monterey County", "active": true}
+- {"name": "Xmas Greens, Monterey Cypress", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Xmas Greens, Pine Juniper", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Xmas Greens, Pine Ponderosa", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Xmas Greens, Redwood", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Boxwood, 12\"", "variety": "", "unit": "Bunch", "price": 24.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Boxwood, 16\"", "variety": "", "unit": "Bunch", "price": 32.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Boxwood, 20\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Boxwood, 24\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Boxwood, 30\"", "variety": "", "unit": "Bunch", "price": 66.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Boxwood, 36\"", "variety": "", "unit": "Bunch", "price": 90.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Cedar Incense, 12\"", "variety": "", "unit": "Bunch", "price": 30.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Cedar Incense, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Cedar Incense, 20\"", "variety": "", "unit": "Bunch", "price": 56.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Cedar Incense, 24\"", "variety": "", "unit": "Bunch", "price": 68.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Cedar Incense, 30\"", "variety": "", "unit": "Bunch", "price": 98.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Cedar Incense, 36\"", "variety": "", "unit": "Bunch", "price": 132.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Eucalyptus (Any type), 12\"", "variety": "", "unit": "Bunch", "price": 24.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Eucalyptus (Any type), 16\"", "variety": "", "unit": "Bunch", "price": 32.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Eucalyptus (Any type), 20\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Eucalyptus (Any type), 24\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Eucalyptus (Any type), 30\"", "variety": "", "unit": "Bunch", "price": 66.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Eucalyptus (Any type), 36\"", "variety": "", "unit": "Bunch", "price": 90.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Heather, 12\"", "variety": "", "unit": "Bunch", "price": 30.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Heather, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Heather, 20\"", "variety": "", "unit": "Bunch", "price": 56.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Heather, 24\"", "variety": "", "unit": "Bunch", "price": 68.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Heather, 30\"", "variety": "", "unit": "Bunch", "price": 98.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Heather, 36\"", "variety": "", "unit": "Bunch", "price": 132.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Leucadendron (Any type), 12\"", "variety": "", "unit": "Bunch", "price": 30.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Leucadendron (Any type), 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Leucadendron (Any type), 20\"", "variety": "", "unit": "Bunch", "price": 56.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Leucadendron (Any type), 24\"", "variety": "", "unit": "Bunch", "price": 68.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Leucadendron (Any type), 30\"", "variety": "", "unit": "Bunch", "price": 98.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Leucadendron (Any type), 36\"", "variety": "", "unit": "Bunch", "price": 132.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Luma, 12\"", "variety": "", "unit": "Bunch", "price": 24.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Luma, 16\"", "variety": "", "unit": "Bunch", "price": 32.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Luma, 20\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Luma, 24\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Luma, 30\"", "variety": "", "unit": "Bunch", "price": 66.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Luma, 36\"", "variety": "", "unit": "Bunch", "price": 90.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia, 12\"", "variety": "", "unit": "Bunch", "price": 24.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia, 16\"", "variety": "", "unit": "Bunch", "price": 32.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia, 20\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia, 24\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia, 30\"", "variety": "", "unit": "Bunch", "price": 66.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia, 36\"", "variety": "", "unit": "Bunch", "price": 90.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Myrtle, 12\"", "variety": "", "unit": "Bunch", "price": 24.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Myrtle, 16\"", "variety": "", "unit": "Bunch", "price": 32.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Myrtle, 20\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Myrtle, 24\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Myrtle, 30\"", "variety": "", "unit": "Bunch", "price": 66.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Myrtle, 36\"", "variety": "", "unit": "Bunch", "price": 90.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Olive, 12\"", "variety": "", "unit": "Bunch", "price": 24.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Olive, 16\"", "variety": "", "unit": "Bunch", "price": 32.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Olive, 20\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Olive, 24\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Olive, 30\"", "variety": "", "unit": "Bunch", "price": 66.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Olive, 36\"", "variety": "", "unit": "Bunch", "price": 90.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Pine Aussie, 12\"", "variety": "", "unit": "Bunch", "price": 24.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Pine Aussie, 16\"", "variety": "", "unit": "Bunch", "price": 32.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Pine Aussie, 20\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Pine Aussie, 24\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Pine Aussie, 30\"", "variety": "", "unit": "Bunch", "price": 66.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Pine Aussie, 36\"", "variety": "", "unit": "Bunch", "price": 90.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Rosemary, 12\"", "variety": "", "unit": "Bunch", "price": 24.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Rosemary, 16\"", "variety": "", "unit": "Bunch", "price": 32.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Rosemary, 20\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Rosemary, 24\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Rosemary, 30\"", "variety": "", "unit": "Bunch", "price": 66.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Rosemary, 36\"", "variety": "", "unit": "Bunch", "price": 90.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel, 12\"", "variety": "", "unit": "Bunch", "price": 24.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel, 16\"", "variety": "", "unit": "Bunch", "price": 32.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel, 20\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel, 24\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel, 30\"", "variety": "", "unit": "Bunch", "price": 66.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel, 36\"", "variety": "", "unit": "Bunch", "price": 90.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Sumac, 12\"", "variety": "", "unit": "Bunch", "price": 24.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Sumac, 16\"", "variety": "", "unit": "Bunch", "price": 32.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Sumac, 20\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Sumac, 24\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Sumac, 30\"", "variety": "", "unit": "Bunch", "price": 66.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Sumac, 36\"", "variety": "", "unit": "Bunch", "price": 90.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Boxwood - Ruscus Israel, 12\"", "variety": "", "unit": "Bunch", "price": 27.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Boxwood - Ruscus Israel, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Boxwood - Ruscus Israel, 20\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Boxwood - Ruscus Israel, 24\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Boxwood - Ruscus Israel, 30\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Boxwood - Ruscus Israel, 36\"", "variety": "", "unit": "Bunch", "price": 100.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Baby - Euc. Silver, 12\"", "variety": "", "unit": "Bunch", "price": 27.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Baby - Euc. Silver, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Baby - Euc. Silver, 20\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Baby - Euc. Silver, 24\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Baby - Euc. Silver, 30\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Baby - Euc. Silver, 36\"", "variety": "", "unit": "Bunch", "price": 100.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Baby, 12\"", "variety": "", "unit": "Bunch", "price": 27.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Baby, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Baby, 20\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Baby, 24\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Baby, 30\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Baby, 36\"", "variety": "", "unit": "Bunch", "price": 100.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Silver, 12\"", "variety": "", "unit": "Bunch", "price": 27.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Silver, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Silver, 20\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Silver, 24\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Silver, 30\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Silver, 36\"", "variety": "", "unit": "Bunch", "price": 100.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron Safari Sunset, 12\"", "variety": "", "unit": "Bunch", "price": 32.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron Safari Sunset, 16\"", "variety": "", "unit": "Bunch", "price": 47.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron Safari Sunset, 20\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron Safari Sunset, 24\"", "variety": "", "unit": "Bunch", "price": 58.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron Safari Sunset, 30\"", "variety": "", "unit": "Bunch", "price": 81.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron Safari Sunset, 36\"", "variety": "", "unit": "Bunch", "price": 96.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Pepperberry, 12\"", "variety": "", "unit": "Bunch", "price": 27.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Pepperberry, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Pepperberry, 20\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Pepperberry, 24\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Pepperberry, 30\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Pepperberry, 36\"", "variety": "", "unit": "Bunch", "price": 100.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Rosemary, 12\"", "variety": "", "unit": "Bunch", "price": 27.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Rosemary, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Rosemary, 20\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Rosemary, 24\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Rosemary, 30\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Rosemary, 36\"", "variety": "", "unit": "Bunch", "price": 100.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Ruscus Israel, 12\"", "variety": "", "unit": "Bunch", "price": 27.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Ruscus Israel, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Ruscus Israel, 20\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Ruscus Israel, 24\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Ruscus Israel, 30\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Ruscus Israel, 36\"", "variety": "", "unit": "Bunch", "price": 100.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Silver - Ruscus Israel, 12\"", "variety": "", "unit": "Bunch", "price": 27.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Silver - Ruscus Israel, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Silver - Ruscus Israel, 20\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Silver - Ruscus Israel, 24\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Silver - Ruscus Israel, 30\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Silver - Ruscus Israel, 36\"", "variety": "", "unit": "Bunch", "price": 100.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Willow - Euc. Seeded, 12\"", "variety": "", "unit": "Bunch", "price": 27.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Willow - Euc. Seeded, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Willow - Euc. Seeded, 20\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Willow - Euc. Seeded, 24\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Willow - Euc. Seeded, 30\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Willow - Euc. Seeded, 36\"", "variety": "", "unit": "Bunch", "price": 100.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Grevillea - Ruscus Israel, 12\"", "variety": "", "unit": "Bunch", "price": 32.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Grevillea - Ruscus Israel, 16\"", "variety": "", "unit": "Bunch", "price": 47.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Grevillea - Ruscus Israel, 20\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Grevillea - Ruscus Israel, 24\"", "variety": "", "unit": "Bunch", "price": 58.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Grevillea - Ruscus Israel, 30\"", "variety": "", "unit": "Bunch", "price": 81.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Grevillea - Ruscus Israel, 36\"", "variety": "", "unit": "Bunch", "price": 96.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Leucadendron Safari - Protea Pink Ice, 16\"", "variety": "", "unit": "Bunch", "price": 51.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Leucadendron Safari - Protea Pink Ice, 20\"", "variety": "", "unit": "Bunch", "price": 66.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Leucadendron Safari - Protea Pink Ice, 24\"", "variety": "", "unit": "Bunch", "price": 80.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Leucadendron Safari - Protea Pink Ice, 30\"", "variety": "", "unit": "Bunch", "price": 112.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Leucadendron Safari - Protea Pink Ice, 36\"", "variety": "", "unit": "Bunch", "price": 148.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Limonium Misty - Ruscus Israel, 12\"", "variety": "", "unit": "Bunch", "price": 32.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Limonium Misty - Ruscus Israel, 16\"", "variety": "", "unit": "Bunch", "price": 47.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Limonium Misty - Ruscus Israel, 20\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Limonium Misty - Ruscus Israel, 24\"", "variety": "", "unit": "Bunch", "price": 58.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Limonium Misty - Ruscus Israel, 30\"", "variety": "", "unit": "Bunch", "price": 81.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Limonium Misty - Ruscus Israel, 36\"", "variety": "", "unit": "Bunch", "price": 96.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Euc. Seeded, 12\"", "variety": "", "unit": "Bunch", "price": 27.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Euc. Seeded, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Euc. Seeded, 20\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Euc. Seeded, 24\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Euc. Seeded, 30\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Euc. Seeded, 36\"", "variety": "", "unit": "Bunch", "price": 100.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Pine Aussie, 12\"", "variety": "", "unit": "Bunch", "price": 27.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Pine Aussie, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Pine Aussie, 20\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Pine Aussie, 24\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Pine Aussie, 30\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Pine Aussie, 36\"", "variety": "", "unit": "Bunch", "price": 100.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Pumpkin Tree, 12\"", "variety": "", "unit": "Bunch", "price": 32.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Pumpkin Tree, 16\"", "variety": "", "unit": "Bunch", "price": 47.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Pumpkin Tree, 20\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Pumpkin Tree, 24\"", "variety": "", "unit": "Bunch", "price": 58.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Pumpkin Tree, 30\"", "variety": "", "unit": "Bunch", "price": 81.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Pumpkin Tree, 36\"", "variety": "", "unit": "Bunch", "price": 96.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Olive - Pepperberry, 12\"", "variety": "", "unit": "Bunch", "price": 27.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Olive - Pepperberry, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Olive - Pepperberry, 20\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Olive - Pepperberry, 24\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Olive - Pepperberry, 30\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Olive - Pepperberry, 36\"", "variety": "", "unit": "Bunch", "price": 100.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Seeded, 12\"", "variety": "", "unit": "Bunch", "price": 27.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Seeded, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Seeded, 20\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Seeded, 24\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Seeded, 30\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Seeded, 36\"", "variety": "", "unit": "Bunch", "price": 100.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Silver, 12\"", "variety": "", "unit": "Bunch", "price": 27.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Silver, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Silver, 20\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Silver, 24\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Silver, 30\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Silver, 36\"", "variety": "", "unit": "Bunch", "price": 100.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Olive, 12\"", "variety": "", "unit": "Bunch", "price": 27.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Olive, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Olive, 20\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Olive, 24\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Olive, 30\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Olive, 36\"", "variety": "", "unit": "Bunch", "price": 100.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Pepperberry, 12\"", "variety": "", "unit": "Bunch", "price": 27.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Pepperberry, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Pepperberry, 20\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Pepperberry, 24\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Pepperberry, 30\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Pepperberry, 36\"", "variety": "", "unit": "Bunch", "price": 100.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Rosemary, 12\"", "variety": "", "unit": "Bunch", "price": 27.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Rosemary, 16\"", "variety": "", "unit": "Bunch", "price": 43.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Rosemary, 20\"", "variety": "", "unit": "Bunch", "price": 50.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Rosemary, 24\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Rosemary, 30\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Rosemary, 36\"", "variety": "", "unit": "Bunch", "price": 100.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Statice Sinuata - Ruscus Israel, 12\"", "variety": "", "unit": "Bunch", "price": 32.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Statice Sinuata - Ruscus Israel, 16\"", "variety": "", "unit": "Bunch", "price": 47.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Statice Sinuata - Ruscus Israel, 20\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Statice Sinuata - Ruscus Israel, 24\"", "variety": "", "unit": "Bunch", "price": 58.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Statice Sinuata - Ruscus Israel, 30\"", "variety": "", "unit": "Bunch", "price": 81.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Statice Sinuata - Ruscus Israel, 36\"", "variety": "", "unit": "Bunch", "price": 96.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Seeded - Rosemary, 12\"", "variety": "", "unit": "Bunch", "price": 30.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Seeded - Rosemary, 16\"", "variety": "", "unit": "Bunch", "price": 48.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Seeded - Rosemary, 20\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Seeded - Rosemary, 24\"", "variety": "", "unit": "Bunch", "price": 60.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Seeded - Rosemary, 30\"", "variety": "", "unit": "Bunch", "price": 80.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Seeded - Rosemary, 36\"", "variety": "", "unit": "Bunch", "price": 110.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Cedar Incense - Leucadendron - Protea, 16\"", "variety": "", "unit": "Bunch", "price": 55.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Cedar Incense - Leucadendron - Protea, 20\"", "variety": "", "unit": "Bunch", "price": 64.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Cedar Incense - Leucadendron - Protea, 24\"", "variety": "", "unit": "Bunch", "price": 70.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Cedar Incense - Leucadendron - Protea, 30\"", "variety": "", "unit": "Bunch", "price": 95.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Cedar Incense - Leucadendron - Protea, 36\"", "variety": "", "unit": "Bunch", "price": 112.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Baby Blue - Euc. Seeded - Rosemary, 12\"", "variety": "", "unit": "Bunch", "price": 30.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Baby Blue - Euc. Seeded - Rosemary, 16\"", "variety": "", "unit": "Bunch", "price": 48.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Baby Blue - Euc. Seeded - Rosemary, 20\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Baby Blue - Euc. Seeded - Rosemary, 24\"", "variety": "", "unit": "Bunch", "price": 60.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Baby Blue - Euc. Seeded - Rosemary, 30\"", "variety": "", "unit": "Bunch", "price": 80.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Baby Blue - Euc. Seeded - Rosemary, 36\"", "variety": "", "unit": "Bunch", "price": 110.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Baby Blue - Ruscus Israel - Protea, 16\"", "variety": "", "unit": "Bunch", "price": 53.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Baby Blue - Ruscus Israel - Protea, 20\"", "variety": "", "unit": "Bunch", "price": 60.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Baby Blue - Ruscus Israel - Protea, 24\"", "variety": "", "unit": "Bunch", "price": 66.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Baby Blue - Ruscus Israel - Protea, 30\"", "variety": "", "unit": "Bunch", "price": 88.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Baby Blue - Ruscus Israel - Protea, 36\"", "variety": "", "unit": "Bunch", "price": 116.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Silver - Pepperberry, 12\"", "variety": "", "unit": "Bunch", "price": 30.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Silver - Pepperberry, 16\"", "variety": "", "unit": "Bunch", "price": 48.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Silver - Pepperberry, 20\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Silver - Pepperberry, 24\"", "variety": "", "unit": "Bunch", "price": 60.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Silver - Pepperberry, 30\"", "variety": "", "unit": "Bunch", "price": 80.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Silver - Pepperberry, 36\"", "variety": "", "unit": "Bunch", "price": 110.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Silver - Pumpkin Tree, 12\"", "variety": "", "unit": "Bunch", "price": 34.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Silver - Pumpkin Tree, 16\"", "variety": "", "unit": "Bunch", "price": 52.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Silver - Pumpkin Tree, 20\"", "variety": "", "unit": "Bunch", "price": 60.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Silver - Pumpkin Tree, 24\"", "variety": "", "unit": "Bunch", "price": 63.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Silver - Pumpkin Tree, 30\"", "variety": "", "unit": "Bunch", "price": 89.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Euc. Silver - Pumpkin Tree, 36\"", "variety": "", "unit": "Bunch", "price": 104.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron - Cotoneaster, 12\"", "variety": "", "unit": "Bunch", "price": 34.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron - Cotoneaster, 16\"", "variety": "", "unit": "Bunch", "price": 52.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron - Cotoneaster, 20\"", "variety": "", "unit": "Bunch", "price": 60.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron - Cotoneaster, 24\"", "variety": "", "unit": "Bunch", "price": 63.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron - Cotoneaster, 30\"", "variety": "", "unit": "Bunch", "price": 89.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron - Cotoneaster, 36\"", "variety": "", "unit": "Bunch", "price": 104.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron - Pepperberry, 12\"", "variety": "", "unit": "Bunch", "price": 34.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron - Pepperberry, 16\"", "variety": "", "unit": "Bunch", "price": 52.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron - Pepperberry, 20\"", "variety": "", "unit": "Bunch", "price": 60.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron - Pepperberry, 24\"", "variety": "", "unit": "Bunch", "price": 63.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron - Pepperberry, 30\"", "variety": "", "unit": "Bunch", "price": 89.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron - Pepperberry, 36\"", "variety": "", "unit": "Bunch", "price": 104.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron - Protea, 16\"", "variety": "", "unit": "Bunch", "price": 58.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron - Protea, 20\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron - Protea, 24\"", "variety": "", "unit": "Bunch", "price": 96.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron - Protea, 30\"", "variety": "", "unit": "Bunch", "price": 124.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Euc. Seeded - Leucadendron - Protea, 36\"", "variety": "", "unit": "Bunch", "price": 160.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Grevillea - Leucadendron - Protea, 16\"", "variety": "", "unit": "Bunch", "price": 58.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Grevillea - Leucadendron - Protea, 20\"", "variety": "", "unit": "Bunch", "price": 74.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Grevillea - Leucadendron - Protea, 24\"", "variety": "", "unit": "Bunch", "price": 96.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Grevillea - Leucadendron - Protea, 30\"", "variety": "", "unit": "Bunch", "price": 124.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Grevillea - Leucadendron - Protea, 36\"", "variety": "", "unit": "Bunch", "price": 160.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Euc. Seeded - Pepperberry, 12\"", "variety": "", "unit": "Bunch", "price": 30.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Euc. Seeded - Pepperberry, 16\"", "variety": "", "unit": "Bunch", "price": 48.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Euc. Seeded - Pepperberry, 20\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Euc. Seeded - Pepperberry, 24\"", "variety": "", "unit": "Bunch", "price": 60.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Euc. Seeded - Pepperberry, 30\"", "variety": "", "unit": "Bunch", "price": 80.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Euc. Seeded - Pepperberry, 36\"", "variety": "", "unit": "Bunch", "price": 110.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Euc. Seeded - Pumpkin Tree, 12\"", "variety": "", "unit": "Bunch", "price": 34.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Euc. Seeded - Pumpkin Tree, 16\"", "variety": "", "unit": "Bunch", "price": 52.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Euc. Seeded - Pumpkin Tree, 20\"", "variety": "", "unit": "Bunch", "price": 60.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Euc. Seeded - Pumpkin Tree, 24\"", "variety": "", "unit": "Bunch", "price": 63.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Euc. Seeded - Pumpkin Tree, 30\"", "variety": "", "unit": "Bunch", "price": 89.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Euc. Seeded - Pumpkin Tree, 36\"", "variety": "", "unit": "Bunch", "price": 104.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Ruscus Israel - Boxwood, 12\"", "variety": "", "unit": "Bunch", "price": 30.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Ruscus Israel - Boxwood, 16\"", "variety": "", "unit": "Bunch", "price": 48.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Ruscus Israel - Boxwood, 20\"", "variety": "", "unit": "Bunch", "price": 54.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Ruscus Israel - Boxwood, 24\"", "variety": "", "unit": "Bunch", "price": 60.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Ruscus Israel - Boxwood, 30\"", "variety": "", "unit": "Bunch", "price": 80.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Magnolia - Ruscus Israel - Boxwood, 36\"", "variety": "", "unit": "Bunch", "price": 110.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Baby Blue - Pods Silver Bells, 12\"", "variety": "", "unit": "Bunch", "price": 34.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Baby Blue - Pods Silver Bells, 16\"", "variety": "", "unit": "Bunch", "price": 52.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Baby Blue - Pods Silver Bells, 20\"", "variety": "", "unit": "Bunch", "price": 60.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Baby Blue - Pods Silver Bells, 24\"", "variety": "", "unit": "Bunch", "price": 63.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Baby Blue - Pods Silver Bells, 30\"", "variety": "", "unit": "Bunch", "price": 89.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Ruscus Israel - Euc. Baby Blue - Pods Silver Bells, 36\"", "variety": "", "unit": "Bunch", "price": 104.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Statice Sinuata - Ruscus Israel - Misty, 12\"", "variety": "", "unit": "Bunch", "price": 34.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Statice Sinuata - Ruscus Israel - Misty, 16\"", "variety": "", "unit": "Bunch", "price": 52.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Statice Sinuata - Ruscus Israel - Misty, 20\"", "variety": "", "unit": "Bunch", "price": 60.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Statice Sinuata - Ruscus Israel - Misty, 24\"", "variety": "", "unit": "Bunch", "price": 63.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Statice Sinuata - Ruscus Israel - Misty, 30\"", "variety": "", "unit": "Bunch", "price": 89.0, "region": "Monterey County", "active": true}
+- {"name": "Wreath \u2014 Statice Sinuata - Ruscus Israel - Misty, 36\"", "variety": "", "unit": "Bunch", "price": 104.0, "region": "Monterey County", "active": true}

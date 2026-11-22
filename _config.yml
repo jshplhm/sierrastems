@@ -26,7 +26,8 @@ defaults:
 # ---- Live data -------------------------------------------------------------
 # Published Google Sheet CSV for the weekly list (see README, "Weekly availability").
 # Leave empty to show the sample list in _data/availability.yml.
-availability_csv_url: ""
+availability_csv_url: "https://docs.google.com/spreadsheets/d/10O2GSk8-nz15t84NOYJjPSVHqO6MUC4KGYoblx9WwSc/export?format=csv&gid=135957142"   # Week of 11/23 tab
+florist_list_label: "Week of 11/23"
 
 # Trade code for florist prices, stored as a SHA-256 hash (see README, "Trade code").
 # To change it: printf "newcode" | shasum -a 256, then paste the hash here.

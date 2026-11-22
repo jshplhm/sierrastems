@@ -96,6 +96,15 @@
       group.appendChild(b);
     });
     chips = form.querySelectorAll('[data-category]');
+    /* Hide filters and columns the list has no data for. */
+    var has = function (k) { return items.some(function (i) { return i[k] != null && i[k] !== '' && i[k] !== false; }); };
+    colorSel.closest('label').hidden = !has('color');
+    form.elements.nc.closest('label').hidden = !has('nevada_county');
+    group.hidden = !Object.keys(cats).length && !Array.prototype.some.call(chips, function (b) { return b.dataset.category && !b.hidden; });
+    var table = document.querySelector('.stem-table');
+    table.classList.toggle('no-color', !has('color'));
+    table.classList.toggle('no-length', !has('stem_length'));
+    table.classList.toggle('no-avail', !has('qty_available'));
   }
 
   function paintBar() {
