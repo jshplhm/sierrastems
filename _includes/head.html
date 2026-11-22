@@ -16,6 +16,9 @@
   window.SS_CONFIG = {
     csv: {{ site.availability_csv_url | jsonify }},
     floristLabel: {{ site.florist_list_label | jsonify }},
+    floristSheetId: {{ site.florist_sheet_id | jsonify }},
+    floristMonths: {{ site.data.florist_months | jsonify }},
+    floristData: {{ '/assets/data/florist/' | relative_url | jsonify }},
     endpoint: {{ site.order_endpoint | jsonify }},
     minimum: {{ site.terms.offseason_minimum | default: 1000 }},
     inseasonMinimum: {{ site.terms.inseason_minimum | default: 0 }},

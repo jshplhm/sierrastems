@@ -13,6 +13,7 @@ _data/availability.yml   Sample stems, shown only if the live sheet can't be rea
 _data/fulfillment.yml    Florist pickup and delivery options and fees
 _data/fulfillment_diy.yml  DIY pickup and delivery options
 _data/diy_months.yml     Months with a posted wholesale list; prices in assets/data/diy/<Month>.json
+_data/florist_months.yml Monthly tabs (month + gid) in the florist sheet, shown after This week in the florist List menu; saved copies in assets/data/florist/<Month>.csv
 _data/seasonality.yml    The month chart on /sourcing/
 _data/images.yml         Photo slots: file name and alt text for each
 assets/images/           Drop real photos here

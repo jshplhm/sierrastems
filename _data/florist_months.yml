@@ -1,0 +1,13 @@
+# Monthly tabs in Brittany's florist sheet (florist_sheet_id in _config.yml), shown in the list menu after This week.
+# gid is the number after gid= in the tab's link. assets/data/florist/<Month>.csv is a saved copy used if the live read fails.
+- { month: January, gid: "1227975040" }
+- { month: February, gid: "1387492862" }
+- { month: March, gid: "494772389" }
+- { month: April, gid: "2099639638" }
+- { month: May, gid: "715095673" }
+- { month: June, gid: "1042375634" }
+- { month: July, gid: "665033513" }
+- { month: August, gid: "1548481258" }
+- { month: September, gid: "737753910" }
+- { month: October, gid: "1048475513" }
+- { month: November, gid: "440063598" }

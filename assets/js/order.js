@@ -81,14 +81,14 @@
     var max = l.qty_available != null ? ' max="' + l.qty_available + '"' : '';
     var meta = isDiy
       ? [esc(l.unit), SS.money(l.price) + (/^per\s+/i.test(l.unit) ? ' ' + esc(l.unit.toLowerCase()) : ' a bunch'), esc(l.month) + ' prices'].join(' · ')
-      : [esc(l.color), esc(l.stem_length), esc(l.unit)].filter(Boolean).join(' · ') + ' · ' + SS.money(l.price) + ' each';
-    var source = isDiy ? '' : '<p class="line-source">' + esc(l.farm) + (l.region ? ', ' + esc(l.region) : '') +
+      : [esc(l.color), esc(l.stem_length), esc(l.unit)].filter(Boolean).join(' · ') + ' · ' + SS.money(l.price) + ' each' + (l.month ? ' · ' + esc(l.month) + ' prices' : '');
+    var source = isDiy ? '' : '<p class="line-source">' + [esc(l.farm), esc(l.region)].filter(Boolean).join(', ') +
       (l.nevada_county ? ' <span class="badge">Nevada County grown</span>' : '') + '</p>';
     return '<li class="line' + (missing[l.id] ? ' is-missing' : '') + '" data-id="' + esc(l.id) + '">' +
       '<div class="line-main">' +
         '<p class="line-name"><strong>' + esc(l.name) + '</strong>' + (l.variety ? ' ' + esc(l.variety) : '') + '</p>' +
         '<p class="line-meta">' + meta + '</p>' + source +
-        (missing[l.id] ? '<p class="line-flag">Not on this week\'s list. We will check and confirm.</p>' : '') +
+        (missing[l.id] ? '<p class="line-flag">Not on ' + (l.month ? 'the ' + esc(l.month) : 'this week\'s') + ' list. We will check and confirm.</p>' : '') +
       '</div>' +
       '<div class="line-side">' +
         '<span class="qty">' +
@@ -190,26 +190,32 @@
     if (/^fulfillment-/.test(e.target.name)) { paintRadios(); summarize(); }
   });
 
-  /* Florist lines: bring prices and stock up to this week's list. */
+  /* Florist lines: bring prices and stock up to the list each line came from. */
   if (!isDiy && !locked) {
-    SS.loadAvailability().then(function (data) {
-      if (data.source === 'fallback') return;
-      var byId = {};
-      data.items.forEach(function (i) { byId[i.id] = i; });
+    var lists = [];
+    cart.items().forEach(function (l) { var m = l.month || ''; if (lists.indexOf(m) === -1) lists.push(m); });
+    Promise.all(lists.map(function (m) { return SS.loadAvailability(m); })).then(function (all) {
+      var byId = {}, loaded = {};
+      all.forEach(function (data) {
+        if (data.source === 'fallback' || data.source === 'missing') return;
+        loaded[data.month || ''] = true;
+        data.items.forEach(function (i) { byId[i.id] = i; });
+      });
       var changed = false, notes = [];
       var lines = cart.items().map(function (l) {
+        if (!loaded[l.month || '']) return l;
         var cur = byId[l.id];
         if (!cur) { missing[l.id] = true; return l; }
         var next = Object.assign({}, l, { price: cur.price, qty_available: cur.qty_available, nevada_county: cur.nevada_county, farm: cur.farm, region: cur.region });
         if (cur.price !== l.price) { changed = true; notes.push(l.name + ' price is now ' + SS.money(cur.price) + '.'); }
         if (cur.qty_available != null && l.qty > cur.qty_available) {
           next.qty = cur.qty_available; changed = true;
-          notes.push(l.name + ' reduced to ' + cur.qty_available + ', all we have this week.');
+          notes.push(l.name + ' reduced to ' + cur.qty_available + ', all we have.');
         }
         return next;
       }).filter(function (l) { return l.qty > 0; });
       if (changed) cart.replace(lines);
-      if (notes.length) { syncNote.textContent = 'Updated to this week\'s list: ' + notes.join(' '); syncNote.hidden = false; }
+      if (notes.length) { syncNote.textContent = 'Updated to the latest list: ' + notes.join(' '); syncNote.hidden = false; }
       renderLines();
     });
   }

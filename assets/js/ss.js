@@ -213,11 +213,15 @@
       price: r.price, region: county, active: true
     };
   }
-  function finish(rows, source, error) {
+  function finish(rows, source, error, month) {
     var items = rows.map(normalize).filter(function (i) { return i.active && i.name; });
     var updated = null;
-    items.forEach(function (i) { if (i.updated && (!updated || i.updated > updated)) updated = i.updated; });
-    return { items: items, updated: updated, source: source, error: error || null };
+    items.forEach(function (i) {
+      if (i.updated && (!updated || i.updated > updated)) updated = i.updated;
+      /* A month list's stems are their own lines in the order, priced for that month. */
+      if (month) { i.id += '--' + slug(month); i.month = month; }
+    });
+    return { items: items, updated: updated, source: source, error: error || null, month: month || null };
   }
   function fallbackRows() {
     var el = document.getElementById('ss-fallback');
@@ -225,33 +229,52 @@
     try { return JSON.parse(el.textContent) || []; } catch (e) { return []; }
   }
 
-  var loading = null;
-  function loadAvailability() {
-    if (loading) return loading;
-    if (!C.csv) {
-      loading = Promise.resolve(finish(fallbackRows(), 'sample'));
-      return loading;
+  /* key: '' for this week's list, or a month from floristMonths. */
+  function floristUrl(month) {
+    if (!month) return C.csv;
+    var list = C.floristMonths || [];
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].month === month && C.floristSheetId) {
+        return 'https://docs.google.com/spreadsheets/d/' + encodeURIComponent(C.floristSheetId) + '/export?format=csv&gid=' + encodeURIComponent(list[i].gid);
+      }
     }
+    return '';
+  }
+  function csvRows(text) {
+    if (/^\s*</.test(text)) throw new Error('Not a CSV. Check the published link format.');
+    var rows = parseCSV(text);
+    if (rows.length && !('name' in rows[0]) && 'item' in rows[0]) rows = rows.map(fromWeeklyTab);
+    if (!rows.length || !('name' in rows[0])) throw new Error('CSV has no name column');
+    return rows;
+  }
+  function fetchText(url) {
     var ctrl = window.AbortController ? new AbortController() : null;
     var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 8000);
-    loading = fetch(C.csv, { cache: 'no-store', signal: ctrl ? ctrl.signal : undefined })
+    return fetch(url, { cache: 'no-store', signal: ctrl ? ctrl.signal : undefined })
       .then(function (res) {
+        clearTimeout(timer);
         if (!res.ok) throw new Error('HTTP ' + res.status);
         return res.text();
-      })
-      .then(function (text) {
-        if (/^\s*</.test(text)) throw new Error('Not a CSV. Check the published link format.');
-        var rows = parseCSV(text);
-        if (rows.length && !('name' in rows[0]) && 'item' in rows[0]) rows = rows.map(fromWeeklyTab);
-        if (!rows.length || !('name' in rows[0])) throw new Error('CSV has no name column');
-        return finish(rows, 'live');
-      })
-      .catch(function (err) {
-        if (window.console) console.warn('[Sierra Stems] Live availability failed, using saved list:', err);
-        return finish(fallbackRows(), 'fallback', err);
-      })
-      .then(function (r) { clearTimeout(timer); return r; });
-    return loading;
+      }, function (err) { clearTimeout(timer); throw err; });
+  }
+  var availCache = {};
+  function loadAvailability(month) {
+    month = month || '';
+    if (availCache[month]) return availCache[month];
+    var url = floristUrl(month);
+    if (!month && !url) return (availCache[month] = Promise.resolve(finish(fallbackRows(), 'sample')));
+    var live = url ? fetchText(url).then(function (text) { return finish(csvRows(text), 'live', null, month); }) : Promise.reject(new Error('No link for ' + month));
+    availCache[month] = live.catch(function (err) {
+      if (window.console) console.warn('[Sierra Stems] Live ' + (month || 'weekly') + ' list failed, using saved list:', err);
+      if (!month) return finish(fallbackRows(), 'fallback', err);
+      return fetchText(C.floristData + encodeURIComponent(month) + '.csv')
+        .then(function (text) { return finish(csvRows(text), 'fallback', err, month); })
+        .catch(function () {
+          delete availCache[month];
+          return { items: [], updated: null, source: 'missing', error: err, month: month };
+        });
+    });
+    return availCache[month];
   }
 
   /* ---------- DIY price guide ---------- */
@@ -361,7 +384,7 @@
   }
 
   function updatedText(data) {
-    var t = data.updated ? 'Last updated: ' + formatDate(data.updated) : (C.floristLabel && data.source !== 'sample' ? C.floristLabel : '');
+    var t = data.month ? data.month + ' prices. We confirm availability when you order.' : (data.updated ? 'Last updated: ' + formatDate(data.updated) : (C.floristLabel && data.source !== 'sample' ? C.floristLabel : ''));
     if (data.source === 'sample') t = (t ? t + '. ' : '') + 'Sample list.';
     if (data.source === 'fallback') t = (t ? t + '. ' : '') + 'Showing our saved list; the live list did not load.';
     return t;

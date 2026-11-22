@@ -74,6 +74,7 @@
   }
 
   function buildFilters() {
+    while (colorSel.options.length > 1) colorSel.remove(1);
     var colors = {};
     items.forEach(function (i) { if (i.color) colors[i.color.toLowerCase()] = i.color; });
     Object.keys(colors).sort().forEach(function (k) {
@@ -84,13 +85,16 @@
     var cats = {};
     items.forEach(function (i) { if (i.category) cats[i.category] = true; });
     var group = form.querySelector('[data-category-chips]');
+    Array.prototype.forEach.call(group.querySelectorAll('[data-added]'), function (b) { b.remove(); });
+    chips = form.querySelectorAll('[data-category]');
     Array.prototype.forEach.call(chips, function (b) {
+      b.hidden = false;
       if (b.dataset.category && !cats[b.dataset.category]) b.hidden = true;
       delete cats[b.dataset.category];
     });
     Object.keys(cats).forEach(function (c) {
       var b = document.createElement('button');
-      b.type = 'button'; b.className = 'chip'; b.dataset.category = c;
+      b.type = 'button'; b.className = 'chip'; b.dataset.category = c; b.dataset.added = '';
       b.setAttribute('aria-pressed', 'false');
       b.textContent = c.charAt(0).toUpperCase() + c.slice(1);
       group.appendChild(b);
@@ -131,6 +135,7 @@
     if (e.target.name === 'q') { state.q = e.target.value.trim().toLowerCase(); render(); }
   });
   form.addEventListener('change', function (e) {
+    if (e.target.name === 'list') { load(e.target.value); return; }
     if (e.target.name === 'color') state.color = e.target.value;
     if (e.target.name === 'nc') state.nc = e.target.checked;
     render();
@@ -143,7 +148,9 @@
     render();
   });
   document.querySelector('[data-clear]').addEventListener('click', function () {
+    var pick = form.elements.list.value;
     form.reset();
+    form.elements.list.value = pick;
     state = { q: '', category: '', color: '', nc: false };
     Array.prototype.forEach.call(chips, function (c) { c.setAttribute('aria-pressed', String(c.dataset.category === '')); });
     render();
@@ -168,7 +175,7 @@
   function start() {
     if (started || !SS.trade.isUnlocked()) return;
     started = true;
-    load();
+    load(form.elements.list.value);
   }
 
   /* Trade gate */
@@ -199,20 +206,29 @@
     gateForm.elements.code.focus();
   });
 
-  function load() {
-  SS.loadAvailability().then(function (data) {
-    items = data.items;
-    items.forEach(function (i) { byId[i.id] = i; });
-    document.querySelector('[data-updated]').textContent = SS.updatedText(data);
-    document.querySelector('.stem-table').classList.toggle('has-images', items.some(function (i) { return !!i.image_url; }));
-    buildFilters();
-    render();
-    paintBar();
-    if (!items.length) {
-      list.innerHTML = '';
-      countEl.textContent = 'The list is being updated. Check back soon, or contact us for what is blooming.';
-    }
-  });
+  var current = null;
+  var titleEl = document.querySelector('[data-list-title]');
+  function load(month) {
+    month = month || '';
+    current = month;
+    titleEl.textContent = month ? 'The ' + month + ' list' : 'This week\'s list';
+    list.setAttribute('aria-busy', 'true');
+    SS.loadAvailability(month).then(function (data) {
+      if ((data.month || '') !== current) return; /* a later pick won */
+      list.removeAttribute('aria-busy');
+      items = data.items;
+      byId = {};
+      items.forEach(function (i) { byId[i.id] = i; });
+      document.querySelector('[data-updated]').textContent = SS.updatedText(data);
+      document.querySelector('.stem-table').classList.toggle('has-images', items.some(function (i) { return !!i.image_url; }));
+      buildFilters();
+      render();
+      paintBar();
+      if (!items.length) {
+        list.innerHTML = '';
+        countEl.textContent = month ? 'The ' + month + ' list did not load. Refresh to try again, or contact us.' : 'The list is being updated. Check back soon, or contact us for what is blooming.';
+      }
+    });
   }
 
   start();

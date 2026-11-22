@@ -9,7 +9,7 @@ scripts:
 <section class="tool-head">
   <div class="wrap">
     <p class="eyebrow">For florists and event designers</p>
-    <h1 class="h-page">This week's list</h1>
+    <h1 class="h-page" data-list-title>This week's list</h1>
     <div data-trade-content>
       <p class="updated" data-updated aria-live="polite">&nbsp;</p>
       <p class="tool-note">Wholesale prices per unit. In-season orders start at {% include money.html n=site.terms.inseason_minimum %}, off-season orders at {% include money.html n=site.terms.offseason_minimum %}. <a href="{{ '/terms/' | relative_url }}">Terms</a> · <button type="button" class="link-btn" data-lock>Hide prices</button></p>
@@ -21,7 +21,14 @@ scripts:
 
 <div data-trade-content>
   <div class="filters-bar">
-    <form class="wrap filters" data-filters role="search" aria-label="Filter stems" onsubmit="return false">
+    <form class="wrap filters filters-florist" data-filters role="search" aria-label="Filter stems" onsubmit="return false">
+      <label class="select select-month">
+        <span class="select-label">List</span>
+        <select name="list" data-list-pick>
+          <option value="">This week{% if site.florist_list_label %} ({{ site.florist_list_label }}){% endif %}</option>
+          {%- for m in site.data.florist_months %}<option value="{{ m.month }}">{{ m.month }}</option>{% endfor -%}
+        </select>
+      </label>
       <label class="search">
         <span class="sr-only">Search stems</span>
         <input type="search" name="q" placeholder="Search ranunculus, eucalyptus, kale" autocomplete="off" enterkeyhint="search">
