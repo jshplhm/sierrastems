@@ -8,7 +8,7 @@
   unit: Bunch of 5
   price: 18
   qty_available: 40
-  farm: SierraStems Farm
+  farm: Sierra Stems Farm
   region: Nevada County
   nevada_county: true
   image_url:
@@ -22,7 +22,7 @@
   unit: Bunch of 5
   price: 16
   qty_available: 30
-  farm: SierraStems Farm
+  farm: Sierra Stems Farm
   region: Nevada County
   nevada_county: true
   image_url:
@@ -50,7 +50,7 @@
   unit: Bunch of 10
   price: 24
   qty_available: 20
-  farm: SierraStems Farm
+  farm: Sierra Stems Farm
   region: Nevada County
   nevada_county: true
   image_url:
@@ -64,7 +64,7 @@
   unit: Bunch of 10
   price: 12
   qty_available: 25
-  farm: SierraStems Farm
+  farm: Sierra Stems Farm
   region: Nevada County
   nevada_county: true
   image_url:
@@ -78,7 +78,7 @@
   unit: Bunch of 10
   price: 14
   qty_available: 30
-  farm: SierraStems Farm
+  farm: Sierra Stems Farm
   region: Nevada County
   nevada_county: true
   image_url:

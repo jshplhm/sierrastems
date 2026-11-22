@@ -314,7 +314,7 @@
         confirmSent(r.id, p);
       })
       .catch(function (err) {
-        if (window.console) console.warn('[SierraStems] Order submit failed:', err);
+        if (window.console) console.warn('[Sierra Stems] Order submit failed:', err);
         submitBtn.disabled = false;
         submitBtn.textContent = 'Send order request';
         showError('That did not go through. Try again' + (hasEmail ? ', or <a href="' + esc(mailtoFallback(p)) + '">send this order by email</a>.' : '.'));

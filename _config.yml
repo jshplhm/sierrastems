@@ -1,8 +1,8 @@
-# SierraStems site settings
+# Sierra Stems site settings
 # Values in [BRACKETS] are placeholders. Fill them in before launch.
 # Restart `bundle exec jekyll serve` after editing this file.
 
-title: SierraStems
+title: Sierra Stems
 tagline: Wholesale Flowers for the Sierras
 description: >-
   Wholesale flowers for the Sierras. A weekly list for florists and event designers in
@@ -13,7 +13,7 @@ baseurl: ""
 lang: en_US
 logo: /assets/images/og-default.jpg
 social:
-  name: SierraStems
+  name: Sierra Stems
   links: []   # e.g. - https://www.instagram.com/yourhandle
 
 defaults:
@@ -45,7 +45,7 @@ order_endpoint: ""
 
 # ---- Business details ------------------------------------------------------
 business:
-  name: SierraStems
+  name: Sierra Stems
   email: "[EMAIL]"
   phone: "[PHONE]"
   instagram: "[HANDLE]"        # handle without the @

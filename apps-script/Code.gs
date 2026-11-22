@@ -1,5 +1,5 @@
 /**
- * SierraStems order intake.
+ * Sierra Stems order intake.
  *
  * Receives order requests from the website (/order/), appends each one to the
  * "Orders" sheet, and emails a summary. Deploy as a web app (see README, "Orders").
@@ -94,7 +94,7 @@ function doPost(e) {
 
 // Visiting the web app URL in a browser shows this. Handy to confirm it is live.
 function doGet() {
-  return json_({ ok: true, service: 'SierraStems orders' });
+  return json_({ ok: true, service: 'Sierra Stems orders' });
 }
 
 /* ---------- Helpers ---------- */
@@ -154,7 +154,7 @@ function sendEmail_(o) {
     (o.below_minimum ? '\nBELOW ORDER MINIMUM' : '') +
     '\n\nNotes: ' + o.notes;
 
-  var opts = { htmlBody: html, name: 'SierraStems Orders' };
+  var opts = { htmlBody: html, name: 'Sierra Stems Orders' };
   if (o.email) opts.replyTo = o.email;
   MailApp.sendEmail(ORDER_EMAIL, o.list + ' order: ' + o.business + ' · ' + money(o.total), text, opts);
 }
@@ -185,7 +185,7 @@ function testOrder() {
   var res = doPost({ postData: { contents: JSON.stringify({
     business: 'Test Florist', contact: 'Test', email: '', phone: '555-0100', need_by: '2027-05-01',
     fulfillment: 'Pickup, Nevada City studio', fulfillment_fee: 0,
-    items: [{ name: 'Dahlia', variety: 'Café au Lait', unit: 'Bunch of 5', price: 18, qty: 2, farm: 'SierraStems Farm', region: 'Nevada County', nevada_county: true }],
+    items: [{ name: 'Dahlia', variety: 'Café au Lait', unit: 'Bunch of 5', price: 18, qty: 2, farm: 'Sierra Stems Farm', region: 'Nevada County', nevada_county: true }],
     notes: 'Test order from the script editor. Delete this row.'
   }) } });
   console.log(res.getContent());

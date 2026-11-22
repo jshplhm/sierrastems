@@ -1,6 +1,6 @@
-# SierraStems
+# Sierra Stems
 
-Wholesale flower site for SierraStems in Nevada City, serving Tahoe, Truckee, Nevada County, and Sacramento. It has two price lists:
+Wholesale flower site for Sierra Stems in Nevada City, serving Tahoe, Truckee, Nevada County, and Sacramento. It has two price lists:
 
 - **Florists** (`/availability/`): the weekly California grown list, behind a trade code.
 - **DIY weddings** (`/diy/`): the monthly price guide by the bunch, open to everyone.
@@ -92,7 +92,7 @@ Publishing to the web makes that tab public. Keep wholesale costs, customer data
 | unit | Bunch of 10 | Or `Stem` |
 | price | 42 | Price per unit. `$` is fine |
 | qty_available | 24 | Units available. `0` shows Sold out. Order inputs can't go above it |
-| farm | SierraStems Farm | |
+| farm | Sierra Stems Farm | |
 | region | Nevada County | |
 | nevada_county | TRUE | TRUE shows the badge and exempts the stem from the minimum |
 | image_url | https://... | Optional thumbnail. Must be a public image URL |
@@ -139,7 +139,7 @@ DIY orders add the labor and packaging percent and the transportation fee from `
 
 ## Orders (Google Apps Script)
 
-1. Create a new Google Sheet called "SierraStems Orders". Keep it separate from the availability sheet.
+1. Create a new Google Sheet called "Sierra Stems Orders". Keep it separate from the availability sheet.
 2. In that sheet, open **Extensions → Apps Script**, delete the starter code, and paste in `apps-script/Code.gs`.
 3. Set `ORDER_EMAIL` at the top. Use commas for more than one address.
 4. Click **Save**. Choose `testOrder` in the function menu and click **Run**. Approve the permissions; it needs Sheets and Gmail. An "Orders" tab should appear with a test row, and an email should arrive. Delete the test row.

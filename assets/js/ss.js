@@ -1,4 +1,4 @@
-/* SierraStems shared script: availability loader, order list, header menu. */
+/* Sierra Stems shared script: availability loader, order list, header menu. */
 (function () {
   'use strict';
 
@@ -232,7 +232,7 @@
         return finish(rows, 'live');
       })
       .catch(function (err) {
-        if (window.console) console.warn('[SierraStems] Live availability failed, using saved list:', err);
+        if (window.console) console.warn('[Sierra Stems] Live availability failed, using saved list:', err);
         return finish(fallbackRows(), 'fallback', err);
       })
       .then(function (r) { clearTimeout(timer); return r; });
@@ -335,7 +335,7 @@
     }
     diyCache[month] = live
       .catch(function (err) {
-        if (url && window.console) console.warn('[SierraStems] Live DIY list for ' + month + ' did not load, using the saved copy:', err);
+        if (url && window.console) console.warn('[Sierra Stems] Live DIY list for ' + month + ' did not load, using the saved copy:', err);
         return loadSavedDiy(month);
       })
       .catch(function (err) {
