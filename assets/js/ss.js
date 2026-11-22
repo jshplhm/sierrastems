@@ -286,6 +286,9 @@
     var category = String(r.category || '').trim();
     var item = String(r.item || '').replace(/\s*~\s*sale\s*~/i, ' (sale)').replace(/\s+/g, ' ').trim();
     var bunch = String(r.bunch == null ? '' : r.bunch).trim();
+    (C.diyFixes || []).forEach(function (f) {
+      if (f.item && f.item.toLowerCase() === item.toLowerCase() && f.bunch != null) bunch = String(f.bunch);
+    });
     var group = category.split(' - ')[0].trim() || 'Other';
     /* Rose rows put the grade in Category and the length in Item: "Ecuadorian Roses - Specialty", "50 cm". */
     var isLength = /^\d+\s*cm\b|^\d+\s*cm\s*-/i.test(item);

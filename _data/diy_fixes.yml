@@ -1,0 +1,3 @@
+# Corrections the site applies on top of Brittany's wholesale price guide, every month.
+# Match on the item name exactly as it appears in her sheet. Remove a line once she fixes the sheet.
+- { item: "Q.A.L. - Chocolate", bunch: "10" }

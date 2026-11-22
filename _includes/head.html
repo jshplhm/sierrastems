@@ -22,6 +22,7 @@
     diySheetId: {{ site.diy_sheet_id | jsonify }},
     diyUrls: {{ site.diy_csv_urls | jsonify }},
     diyMonths: {{ site.data.diy_months | jsonify }},
+    diyFixes: {{ site.data.diy_fixes | jsonify }},
     diyData: {{ '/assets/data/diy/' | relative_url | jsonify }},
     diy: { minimum: {{ site.terms.diy_minimum | default: 0 }}, transport: {{ site.terms.diy_transport_fee | default: 0 }}, laborPct: {{ site.terms.diy_labor_pct | default: 0 }} },
     diyUrl: {{ '/diy/' | relative_url | jsonify }},
