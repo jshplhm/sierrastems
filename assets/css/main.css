@@ -462,3 +462,6 @@ body.has-order-bar .site-footer { padding-bottom: calc(64px + 32px); }
 .list-tabs a[aria-current="page"] { background: var(--green); border-color: var(--green); color: var(--bg); }
 .locked-note { padding: 20px 0; }
 .actions-tight { margin: 8px 0 16px; }
+
+.collective { max-width: 40rem; margin: 0 0 40px; }
+.collective .lede { margin-top: 12px; }
