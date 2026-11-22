@@ -147,7 +147,7 @@
       var min = Number(C.minimum) || 0;
       if (t.offseason > 0 && t.offseason < min) {
         msg = 'Off-season stems total ' + SS.money(t.offseason) + '. The off-season minimum is ' + wholeMoney(min) +
-          ', so add ' + SS.money(min - t.offseason) + ' more. Nevada County grown stems have no minimum and do not count toward it. You can still send this and we will talk it through.';
+          ', so add ' + SS.money(min - t.offseason) + ' more. You can still send this and we will talk it through.';
       }
     }
     warn.textContent = msg;

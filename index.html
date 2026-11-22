@@ -87,7 +87,6 @@ scripts:
       <div>
         <h3 class="term-h">Florists</h3>
         <dl class="term-list">
-          <div><dt>Nevada County grown stems</dt><dd>No minimum</dd></div>
           <div><dt>Off-season orders</dt><dd>{% include money.html n=t.offseason_minimum %} minimum</dd></div>
           {%- for f in site.data.fulfillment %}
           <div><dt>{{ f.short }}</dt><dd>{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% if f.fee_suffix %} {{ f.fee_suffix }}{% endif %}{% else %}{{ f.fee_label }}{% endif %}</dd></div>
