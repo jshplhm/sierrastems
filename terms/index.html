@@ -19,7 +19,7 @@ body_class: page-terms
       <div><dt>In-season orders</dt><dd>{% include money.html n=t.inseason_minimum %} minimum.</dd></div>
       <div><dt>Off-season orders</dt><dd>{% include money.html n=t.offseason_minimum %} minimum. Off-season stems come from Central Coast growers, and the minimum is set for larger weddings.</dd></div>
       {%- for f in site.data.fulfillment %}
-      <div><dt>{{ f.label }}</dt><dd><strong>{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% if f.fee_suffix %} {{ f.fee_suffix }}{% endif %}{% else %}{{ f.fee_label }}{% endif %}</strong>. {{ f.detail }}</dd></div>
+      <div><dt>{{ f.label }}</dt><dd><strong>{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% if f.fee_suffix %} {{ f.fee_suffix }}{% endif %}{% else %}{{ f.fee_label }}{% endif %}</strong>{% if f.detail %}. {{ f.detail }}{% endif %}</dd></div>
       {%- endfor %}
     </dl>
   </section>
@@ -32,7 +32,7 @@ body_class: page-terms
       <div><dt>Transportation</dt><dd>${{ t.diy_transport_fee }} per order.</dd></div>
       <div><dt>Labor and packaging</dt><dd>{{ t.diy_labor_pct }}% of the flower total.</dd></div>
       {%- for f in site.data.fulfillment_diy %}
-      <div><dt>{{ f.label }}</dt><dd><strong>{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% if f.fee_suffix %} {{ f.fee_suffix }}{% endif %}{% else %}{{ f.fee_label }}{% endif %}</strong>. {{ f.detail }}</dd></div>
+      <div><dt>{{ f.label }}</dt><dd><strong>{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% if f.fee_suffix %} {{ f.fee_suffix }}{% endif %}{% else %}{{ f.fee_label }}{% endif %}</strong>{% if f.detail %}. {{ f.detail }}{% endif %}</dd></div>
       {%- endfor %}
     </dl>
   </section>

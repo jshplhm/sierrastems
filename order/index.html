@@ -73,7 +73,7 @@ scripts:
         <input type="radio" name="fulfillment-trade" value="{{ f.id }}"{% if forloop.first %} checked{% endif %}>
         <span class="radio-body">
           <span class="radio-title">{{ f.label }}</span>
-          <span class="radio-detail">{{ f.detail }}</span>
+          {% if f.detail %}<span class="radio-detail">{{ f.detail }}</span>{% endif %}
         </span>
         <span class="radio-fee">{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% if f.fee_suffix %} {{ f.fee_suffix }}{% endif %}{% else %}{{ f.fee_label }}{% endif %}</span>
       </label>
@@ -87,7 +87,7 @@ scripts:
         <input type="radio" name="fulfillment-diy" value="{{ f.id }}"{% if forloop.first %} checked{% endif %}>
         <span class="radio-body">
           <span class="radio-title">{{ f.label }}</span>
-          <span class="radio-detail">{{ f.detail }}</span>
+          {% if f.detail %}<span class="radio-detail">{{ f.detail }}</span>{% endif %}
         </span>
         <span class="radio-fee">{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% if f.fee_suffix %} {{ f.fee_suffix }}{% endif %}{% else %}{{ f.fee_label }}{% endif %}</span>
       </label>
