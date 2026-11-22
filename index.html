@@ -39,25 +39,24 @@ preload_hero: true
 <section class="section section-tint">
   <div class="wrap">
     <p class="eyebrow">For florists</p>
-    <div class="collective">
-      <h2 class="h-display">A florist collective.</h2>
-      <p class="lede">Florists order together and share the shipping. Each trip to the growers is split evenly between the florists who order on it, so the more of us order, the less each of us pays.</p>
-    </div>
-    <ul class="props">
-      <li>
-        <h2>Local when in season</h2>
-        <p>Stems from our Nevada County farm when they are in season. Central Coast growers in Monterey County the rest of the year. Imported roses available as needed.</p>
-      </li>
-      <li>
-        <h2>Every stem has a source</h2>
-        <p>Each listing names the county it came from, like Monterey County, Santa Cruz County, or Sonoma County, so you can tell your clients exactly where their flowers grew.</p>
-      </li>
-      <li>
-        <h2>A fresh list every week</h2>
-        <p>What we have changes with the season, so the list changes every week. Order straight from it.</p>
-      </li>
-    </ul>
+{% include collective.html %}
 
+  </div>
+</section>
+
+<section class="section wrap split">
+  <div class="split-media">{% include photo.html slot="specialty" sizes="(min-width: 960px) 40vw, 100vw" %}</div>
+  <div class="split-copy">
+    <p class="eyebrow">What we grow and source</p>
+    <h2 class="h-display">Dahlias and the stems that make a design.</h2>
+    <p>We specialize in the flowers that are hard to find in good condition: dahlias and specialty and textural stems that give a piece movement.</p>
+    <p>Next season on the farm: fritillaria, allium, ranunculus, dahlias, lisianthus, and filler flowers.</p>
+    <p><a class="link-arrow" href="{{ '/sourcing/' | relative_url }}">Sourcing and seasons</a></p>
+  </div>
+</section>
+
+<section class="section section-tint season-section">
+  <div class="wrap">
     <div class="section-head preview-head">
       <h2 class="h-display">On the list this season</h2>
     </div>
@@ -71,17 +70,6 @@ preload_hero: true
       {%- endfor %}
     </ul>
     <p class="section-cta"><a class="btn btn-primary" href="{{ '/availability/' | relative_url }}">See the full list</a></p>
-  </div>
-</section>
-
-<section class="section wrap split">
-  <div class="split-media">{% include photo.html slot="specialty" sizes="(min-width: 960px) 40vw, 100vw" %}</div>
-  <div class="split-copy">
-    <p class="eyebrow">What we grow and source</p>
-    <h2 class="h-display">Dahlias and the stems that make a design.</h2>
-    <p>We specialize in the flowers that are hard to find in good condition: dahlias and specialty and textural stems that give a piece movement.</p>
-    <p>Next season on the farm: fritillaria, allium, ranunculus, dahlias, lisianthus, and filler flowers.</p>
-    <p><a class="link-arrow" href="{{ '/sourcing/' | relative_url }}">Sourcing and seasons</a></p>
   </div>
 </section>
 

@@ -413,7 +413,8 @@ body.has-order-bar .site-footer { padding-bottom: calc(64px + 32px); }
 .footer-grid a { color: var(--ink); text-decoration: none; }
 .footer-grid a:hover { color: var(--terra); }
 .footer-base { margin-top: 40px; font-size: .8rem; }
-@media (min-width: 800px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr; } }
+.footer-contact { margin-top: 28px; }
+@media (min-width: 800px) { .footer-grid { grid-template-columns: 2fr 1fr; } }
 
 /* ---------- Two audiences ---------- */
 .doors { display: grid; gap: 14px; }
@@ -465,3 +466,4 @@ body.has-order-bar .site-footer { padding-bottom: calc(64px + 32px); }
 
 .collective { max-width: 40rem; margin: 0 0 40px; }
 .collective .lede { margin-top: 12px; }
+.season-section .preview-head { margin-top: 0; }
