@@ -61,6 +61,7 @@ business:
 
 # ---- Terms (shown on Terms, Order, and the home page) ----------------------
 terms:
+  inseason_minimum: 800       # florists: in-season orders
   offseason_minimum: 1000      # florists: off-season orders
   diy_minimum: 500             # DIY weddings
   diy_transport_fee: 50

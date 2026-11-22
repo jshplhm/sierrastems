@@ -12,7 +12,7 @@ scripts:
     <h1 class="h-page">This week's list</h1>
     <div data-trade-content>
       <p class="updated" data-updated aria-live="polite">&nbsp;</p>
-      <p class="tool-note">Wholesale prices per unit. Off-season orders start at {% include money.html n=site.terms.offseason_minimum %}. <a href="{{ '/terms/' | relative_url }}">Terms</a> · <button type="button" class="link-btn" data-lock>Hide prices</button></p>
+      <p class="tool-note">Wholesale prices per unit. In-season orders start at {% include money.html n=site.terms.inseason_minimum %}, off-season orders at {% include money.html n=site.terms.offseason_minimum %}. <a href="{{ '/terms/' | relative_url }}">Terms</a> · <button type="button" class="link-btn" data-lock>Hide prices</button></p>
     </div>
   </div>
 </section>

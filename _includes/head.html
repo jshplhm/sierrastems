@@ -17,6 +17,7 @@
     csv: {{ site.availability_csv_url | jsonify }},
     endpoint: {{ site.order_endpoint | jsonify }},
     minimum: {{ site.terms.offseason_minimum | default: 1000 }},
+    inseasonMinimum: {{ site.terms.inseason_minimum | default: 0 }},
     tradeHash: {{ site.trade_code_sha256 | jsonify }},
     diySheetId: {{ site.diy_sheet_id | jsonify }},
     diyUrls: {{ site.diy_csv_urls | jsonify }},

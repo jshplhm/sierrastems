@@ -1,6 +1,6 @@
 ---
 title: Terms, Minimums, and Delivery Fees
-description: SierraStems terms for florists and DIY weddings. Free Nevada City pickup, $55 Sacramento delivery, and a $500 DIY order minimum.
+description: SierraStems terms for florists and DIY weddings. $800 in-season and $1,000 off-season florist minimums, free Nevada City pickup, $55 Sacramento delivery, and a $500 DIY order minimum.
 permalink: /terms/
 body_class: page-terms
 ---
@@ -16,6 +16,7 @@ body_class: page-terms
     <h2 class="h-section">Florists and event designers</h2>
     <dl class="def">
       <div><dt>Trade prices</dt><dd>The florist list shows wholesale prices with a trade code. <a href="{{ '/contact/' | relative_url }}">Contact us</a> to set up a trade account.</dd></div>
+      <div><dt>In-season orders</dt><dd>{% include money.html n=t.inseason_minimum %} minimum.</dd></div>
       <div><dt>Off-season orders</dt><dd>{% include money.html n=t.offseason_minimum %} minimum. Off-season stems come from Central Coast growers, and the minimum is set for larger weddings.</dd></div>
       {%- for f in site.data.fulfillment %}
       <div><dt>{{ f.label }}</dt><dd><strong>{% if f.fee == 0 %}Free{% elsif f.fee %}${{ f.fee }}{% if f.fee_suffix %} {{ f.fee_suffix }}{% endif %}{% else %}{{ f.fee_label }}{% endif %}</strong>. {{ f.detail }}</dd></div>

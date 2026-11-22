@@ -149,6 +149,11 @@
         msg = 'Off-season stems total ' + SS.money(t.offseason) + '. The off-season minimum is ' + wholeMoney(min) +
           ', so add ' + SS.money(min - t.offseason) + ' more. You can still send this and we will talk it through.';
       }
+      var imin = Number(C.inseasonMinimum) || 0;
+      if (t.offseason === 0 && t.subtotal > 0 && t.subtotal < imin) {
+        msg = 'Flowers total ' + SS.money(t.subtotal) + '. The in-season minimum is ' + wholeMoney(imin) +
+          ', so add ' + SS.money(imin - t.subtotal) + ' more. You can still send this and we will talk it through.';
+      }
     }
     warn.textContent = msg;
     warn.hidden = !msg;
