@@ -389,7 +389,8 @@ body.has-order-bar .site-footer { padding-bottom: calc(64px + 32px); }
 .season td.s-farm + td.s-farm::after, .season td.s-partner + td.s-partner::after { left: -1px; }
 
 /* ---------- Terms & contact ---------- */
-.terms-page { display: grid; gap: 8px; padding-bottom: 88px; max-width: 860px; }
+.terms-page { display: grid; gap: 8px; padding-bottom: 88px; }
+.terms-page > * { max-width: 860px; }
 .terms-block { padding: 28px 0; border-top: 1px solid var(--line); }
 .terms-block p { max-width: 42em; }
 .def { margin: 0; }
