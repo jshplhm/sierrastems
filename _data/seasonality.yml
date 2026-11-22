@@ -9,9 +9,6 @@
 - crop: Allium
   farm: [5, 6, 7]
   partner: []
-- crop: Garden roses
-  farm: []
-  partner: [4, 5, 6, 7, 8, 9, 10, 11]
 - crop: Lisianthus
   farm: [7, 8, 9]
   partner: [6, 10]

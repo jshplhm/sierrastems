@@ -1,33 +1,5 @@
 # Sample list. The site shows this only when the Google Sheet CSV is not set
 # or cannot be reached. Same columns as docs/availability-template.csv.
-- name: Garden Rose
-  variety: Juliet
-  category: focal
-  color: Peach
-  stem_length: 50 cm
-  unit: Bunch of 10
-  price: 42
-  qty_available: 24
-  farm: Central Coast partner grower
-  region: Monterey County
-  nevada_county: false
-  image_url:
-  active: true
-  updated: "2026-11-20"
-- name: Garden Rose
-  variety: Keira
-  category: focal
-  color: Blush
-  stem_length: 50 cm
-  unit: Bunch of 10
-  price: 44
-  qty_available: 18
-  farm: Central Coast partner grower
-  region: Monterey County
-  nevada_county: false
-  image_url:
-  active: true
-  updated: "2026-11-20"
 - name: Dahlia
   variety: Café au Lait
   category: focal
