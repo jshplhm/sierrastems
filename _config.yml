@@ -35,7 +35,7 @@ trade_code_sha256: "f19a336b55b94a20ad07766814fa4870260140229f5ec559de4221031388
 # DIY price guide (see README, "DIY price guide"). Either set the Google Sheet ID and
 # name each tab after its month (January, February, ...), or paste a published CSV
 # link per month under diy_csv_urls. Leave both empty to show the sample guide.
-diy_sheet_id: ""
+diy_sheet_id: "1WVeWXR17aERioGwJ6nLPkido-14FxanZ"   # Wholesale price guide (Brittany)
 diy_csv_urls: {}
 #  November: "https://docs.google.com/spreadsheets/d/e/.../pub?gid=123&single=true&output=csv"
 

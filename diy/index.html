@@ -20,8 +20,7 @@ scripts:
     <label class="select select-month">
       <span class="select-label">Wedding month</span>
       <select name="month" data-month>
-        {%- assign months = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," -%}
-        {%- for m in months %}<option value="{{ m }}">{{ m }}{% unless site.data.diy_months contains m %}, coming soon{% endunless %}</option>{% endfor -%}
+        {%- for m in site.data.diy_months %}<option value="{{ m }}">{{ m }}</option>{% endfor -%}
       </select>
     </label>
     <label class="search">

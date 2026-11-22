@@ -256,7 +256,7 @@
     var rows = parseRows(text), h = -1, note = '', cols = {};
     for (var r = 0; r < rows.length && h < 0; r++) {
       var cells = rows[r].map(function (c) { return c.trim().toLowerCase(); });
-      if (cells.indexOf('item') !== -1 && cells.some(function (c) { return c.indexOf('price') === 0; })) {
+      if (cells.indexOf('item') !== -1 && (cells.indexOf('category') !== -1 || cells.some(function (c) { return c.indexOf('price') === 0; }))) {
         h = r;
         cells.forEach(function (c, j) {
           if (c === 'category') cols.category = j;
@@ -270,6 +270,9 @@
       }
     }
     if (h < 0) throw new Error('No Item/Price header row');
+    /* Google's CSV export drops the "Price" header on a number column, so take the column after Stems/Bunch. */
+    if (cols.price == null && cols.bunch != null) cols.price = cols.bunch + 1;
+    if (cols.price == null) throw new Error('No Price column');
     var items = [];
     rows.slice(h + 1).forEach(function (row) {
       var price = num(row[cols.price]);
@@ -281,7 +284,7 @@
   }
   function normalizeDiy(r, month) {
     var category = String(r.category || '').trim();
-    var item = String(r.item || '').trim();
+    var item = String(r.item || '').replace(/\s*~\s*sale\s*~/i, ' (sale)').replace(/\s+/g, ' ').trim();
     var bunch = String(r.bunch == null ? '' : r.bunch).trim();
     var group = category.split(' - ')[0].trim() || 'Other';
     /* Rose rows put the grade in Category and the length in Item: "Ecuadorian Roses - Specialty", "50 cm". */
@@ -301,40 +304,41 @@
     };
   }
   var diyCache = {};
+  /* Only months listed in _data/diy_months.yml exist on the site. Each reads Brittany's sheet
+     live (tab named after the month) and falls back to the saved copy in assets/data/diy/. */
+  function loadSavedDiy(month) {
+    return fetch(C.diyData + encodeURIComponent(month) + '.json')
+      .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
+      .then(function (d) { return { month: month, items: (d.items || []).map(function (r) { return normalizeDiy(r, month); }), note: '', source: 'saved', error: null }; });
+  }
   function loadDiy(month) {
     if (diyCache[month]) return diyCache[month];
-    var url = diyUrl(month);
-    if (!url) {
-      /* Posted months ship with the site as assets/data/diy/<Month>.json. Any other month is not posted yet. */
-      if ((C.diyMonths || []).indexOf(month) === -1) {
-        diyCache[month] = Promise.resolve({ month: month, items: [], note: '', source: 'missing', error: null });
-        return diyCache[month];
-      }
-      diyCache[month] = fetch(C.diyData + encodeURIComponent(month) + '.json')
-        .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
-        .then(function (d) { return { month: month, items: (d.items || []).map(function (r) { return normalizeDiy(r, month); }), note: '', source: 'live', error: null }; })
-        .catch(function (err) {
-          if (window.console) console.warn('[SierraStems] DIY list for ' + month + ' did not load:', err);
-          delete diyCache[month];
-          return { month: month, items: [], note: '', source: 'missing', error: err };
-        });
-      return diyCache[month];
+    if ((C.diyMonths || []).indexOf(month) === -1) {
+      return Promise.resolve({ month: month, items: [], note: '', source: 'missing', error: null });
     }
-    var ctrl = window.AbortController ? new AbortController() : null;
-    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 8000);
-    diyCache[month] = fetch(url, { cache: 'no-store', signal: ctrl ? ctrl.signal : undefined })
-      .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.text(); })
-      .then(function (text) {
-        if (/^\s*</.test(text)) throw new Error('Not a CSV. Is the sheet shared or published?');
-        var parsed = parseDiy(text, month);
-        if (!parsed.items.length) throw new Error('No priced rows');
-        return { month: month, items: parsed.items, note: parsed.note, source: 'live', error: null };
+    var url = diyUrl(month);
+    var live = Promise.reject(new Error('No sheet set'));
+    if (url) {
+      var ctrl = window.AbortController ? new AbortController() : null;
+      var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 8000);
+      live = fetch(url, { cache: 'no-store', signal: ctrl ? ctrl.signal : undefined })
+        .then(function (res) { clearTimeout(timer); if (!res.ok) throw new Error('HTTP ' + res.status); return res.text(); })
+        .then(function (text) {
+          if (/^\s*</.test(text)) throw new Error('Not a CSV. Is the sheet shared?');
+          var parsed = parseDiy(text, month);
+          if (!parsed.items.length) throw new Error('No priced rows');
+          return { month: month, items: parsed.items, note: parsed.note, source: 'live', error: null };
+        });
+    }
+    diyCache[month] = live
+      .catch(function (err) {
+        if (url && window.console) console.warn('[SierraStems] Live DIY list for ' + month + ' did not load, using the saved copy:', err);
+        return loadSavedDiy(month);
       })
       .catch(function (err) {
-        if (window.console) console.warn('[SierraStems] DIY guide for ' + month + ' did not load:', err);
+        delete diyCache[month];
         return { month: month, items: [], note: '', source: 'missing', error: err };
-      })
-      .then(function (r) { clearTimeout(timer); return r; });
+      });
     return diyCache[month];
   }
 

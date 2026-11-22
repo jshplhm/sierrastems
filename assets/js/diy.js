@@ -165,7 +165,16 @@
   document.addEventListener('ss:cart', paintBar);
 
   var start = remembered();
-  if (SS.months.indexOf(start) === -1) start = SS.months[new Date().getMonth()];
+  var posted = SS.config.diyMonths || [];
+  if (posted.indexOf(start) === -1) {
+    /* This month if it is posted, otherwise the next posted month. */
+    var now = new Date().getMonth();
+    start = posted[0];
+    for (var k = 0; k < 12; k++) {
+      var m = SS.months[(now + k) % 12];
+      if (posted.indexOf(m) !== -1) { start = m; break; }
+    }
+  }
   show(start);
   paintBar();
 })();

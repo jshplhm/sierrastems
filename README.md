@@ -122,7 +122,7 @@ This keeps brides from casually seeing wholesale prices. It is not real security
 
 ## DIY price guide (Google Sheet)
 
-Today the posted months live in the repo: one file per month at `assets/data/diy/<Month>.json`, listed in `_data/diy_months.yml`. Months not listed show "coming soon" in the month menu and a "not posted yet" note. To add a month, export its tab (Category, Item, Stems/Bunch, Price), write the JSON file, and add the month to the list. The Google Sheet route below replaces this once Brittany's guide is a shared Google Sheet.
+The site reads Brittany's "Wholesale price guide" live (diy_sheet_id in _config.yml, tab named after each month). Only months listed in `_data/diy_months.yml` appear in the month menu, because Google returns the FIRST tab when asked for a tab that does not exist. When she adds a month tab, add the month to that list. `assets/data/diy/<Month>.json` is a saved copy used if the live read fails.
 
 The DIY guide has one tab per month. Each tab has a title row, a note row, then `Category, Item, Stems/Bunch, Price`. The site finds the header row itself and ignores the rows above it.
 
