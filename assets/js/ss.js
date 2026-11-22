@@ -384,7 +384,7 @@
   }
 
   function updatedText(data) {
-    var t = data.month ? data.month + ' prices. We confirm availability when you order.' : (data.updated ? 'Last updated: ' + formatDate(data.updated) : (C.floristLabel && data.source !== 'sample' ? C.floristLabel : ''));
+    var t = data.month ? 'Last year\'s ' + data.month + ' prices. Slight fluctuations may occur, and we confirm availability when you order.' : (data.updated ? 'Last updated: ' + formatDate(data.updated) : (C.floristLabel && data.source !== 'sample' ? C.floristLabel : ''));
     if (data.source === 'sample') t = (t ? t + '. ' : '') + 'Sample list.';
     if (data.source === 'fallback') t = (t ? t + '. ' : '') + 'Showing our saved list; the live list did not load.';
     return t;

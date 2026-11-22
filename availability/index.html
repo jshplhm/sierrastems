@@ -26,7 +26,7 @@ scripts:
         <span class="select-label">List</span>
         <select name="list" data-list-pick>
           <option value="">This week{% if site.florist_list_label %} ({{ site.florist_list_label }}){% endif %}</option>
-          {%- for m in site.data.florist_months %}<option value="{{ m.month }}">{{ m.month }}</option>{% endfor -%}
+          {%- for m in site.data.florist_months %}<option value="{{ m.month }}">{{ m.month }} (last year's prices)</option>{% endfor -%}
         </select>
       </label>
       <label class="search">
