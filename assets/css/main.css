@@ -170,6 +170,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .pc-foot { display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); font-size: .875rem; }
 .pc-foot strong { font-weight: 600; font-size: 1rem; }
 .pc-source { font-size: .78rem; color: var(--muted); }
+.season-grid .preview-card a { display: flex; flex-direction: column; }
+.season-grid .pc-source { margin-top: auto; padding-top: 14px; }
 
 .skeleton { list-style: none; height: 150px; border-radius: var(--r); background: linear-gradient(90deg, var(--surface) 0%, #f1ece3 50%, var(--surface) 100%); background-size: 200% 100%; animation: shimmer 1.4s linear infinite; border: 1px solid var(--line); }
 .skeleton span { display: none; }

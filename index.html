@@ -5,8 +5,6 @@ seo:
 description: Wholesale flowers for the Sierras. Local stems in season for florists in Lake Tahoe, Truckee, Nevada County, and Sacramento, and flowers by the bunch for DIY weddings.
 body_class: home
 preload_hero: true
-scripts:
-  - home.js
 ---
 {%- assign t = site.terms -%}
 <section class="hero">
@@ -57,11 +55,17 @@ scripts:
     </ul>
 
     <div class="section-head preview-head">
-      <h2 class="h-display">On the list this week</h2>
-      <p class="updated" data-updated aria-live="polite">&nbsp;</p>
+      <h2 class="h-display">On the list this season</h2>
     </div>
-    <ul class="preview-grid" data-preview>{% include stem-skeleton.html count=6 %}</ul>
-    <noscript><p>Turn on JavaScript to see this week's list, or <a href="{{ '/contact/' | relative_url }}">contact us</a>.</p></noscript>
+    <ul class="preview-grid season-grid">
+      {%- for i in site.data.home_season %}
+      <li class="preview-card"><a href="{{ '/availability/' | relative_url }}">
+        <span class="pc-name">{{ i.name }}</span>
+        <span class="pc-variety">{{ i.variety }}</span>
+        <span class="pc-source">{{ i.source }}</span>
+      </a></li>
+      {%- endfor %}
+    </ul>
     <p class="section-cta"><a class="btn btn-primary" href="{{ '/availability/' | relative_url }}">See the full list</a></p>
   </div>
 </section>
