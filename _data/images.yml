@@ -11,10 +11,10 @@ farm:
   width: 1598
   height: 1204
 cooler:
-  src: /assets/images/cooler.jpg
-  alt: Placeholder. Buckets of stems sorted by order in the walk-in cooler.
-  width: 1200
-  height: 1500
+  src: /assets/images/contact-mustard-field.jpg
+  alt: A woman walking away through a field of yellow mustard flowers under a blue sky.
+  width: 992
+  height: 1318
 coast:
   src: /assets/images/grower-gerbera.jpg
   alt: Benches of gerbera daisies in red, coral, pink, and orange inside a partner grower's greenhouse on the Central Coast.
