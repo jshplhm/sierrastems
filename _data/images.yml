@@ -17,9 +17,9 @@ cooler:
   height: 1500
 coast:
   src: /assets/images/central-coast.jpg
-  alt: Placeholder. Greenhouses at a partner grower on the Central Coast.
-  width: 1600
-  height: 1067
+  alt: Benches of gerbera daisies in red, coral, pink, and orange inside a partner grower's greenhouse on the Central Coast.
+  width: 1000
+  height: 1202
 specialty:
   src: /assets/images/fritillaria.jpg
   alt: Fritillaria with dark plum bell flowers on tall green stems.
