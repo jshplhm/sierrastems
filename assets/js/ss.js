@@ -50,7 +50,7 @@
         var all = current.filter(function (i) { return i.id !== item.id; });
         if (qty > 0) {
           var line = {};
-          Object.keys(item).forEach(function (k) { if (k !== 'updated' && k !== 'active' && k !== 'image_url') line[k] = item[k]; });
+          Object.keys(item).forEach(function (k) { if (k !== 'updated' && k !== 'active' && k !== 'image_url' && k !== 'photo_url') line[k] = item[k]; });
           line.qty = qty;
           if (pos < 0) all.push(line); else all.splice(pos, 0, line);
         }
@@ -192,6 +192,7 @@
       region: String(r.region || '').trim(),
       nevada_county: bool(r.nevada_county),
       image_url: String(r.image_url || '').trim(),
+      photo_url: String(r.photo_url || '').trim(),
       active: r.active === undefined || r.active === null || r.active === '' ? false : bool(r.active),
       updated: parseDate(r.updated)
     };
@@ -218,6 +219,15 @@
     (C.floristFixes || []).forEach(function (f) {
       if (f.list !== list) return;
       rows.forEach(function (r) { if (r.name === f.item && f.unit) r.unit = f.unit; });
+    });
+    /* Photos from the sheet's Photo Links column, saved in _data/florist_photos.yml. */
+    var photos = (C.floristPhotos || {})[list] || {};
+    rows.forEach(function (r) {
+      var id = photos[r.name];
+      if (id && !r.image_url) {
+        r.image_url = C.floristImg + id + '.jpg';
+        r.photo_url = 'https://drive.google.com/file/d/' + id + '/view';
+      }
     });
     return rows;
   }

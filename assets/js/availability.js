@@ -28,6 +28,7 @@
     var img = i.image_url
       ? '<img src="' + esc(i.image_url) + '" alt="" width="96" height="96" loading="lazy" decoding="async">'
       : '';
+    if (img && i.photo_url) img = '<a href="' + esc(i.photo_url) + '" target="_blank" rel="noopener" aria-label="Photo of ' + esc(i.name) + '">' + img + '</a>';
     var source = esc(i.farm) + (i.farm && i.region ? ', ' : '') + esc(i.region);
     var max = i.qty_available != null ? ' max="' + i.qty_available + '"' : '';
     return '' +
