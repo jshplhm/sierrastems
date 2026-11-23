@@ -213,7 +213,16 @@
       price: r.price, region: county, active: true
     };
   }
+  function applyFloristFixes(rows, month) {
+    var list = month || 'This week';
+    (C.floristFixes || []).forEach(function (f) {
+      if (f.list !== list) return;
+      rows.forEach(function (r) { if (r.name === f.item && f.unit) r.unit = f.unit; });
+    });
+    return rows;
+  }
   function finish(rows, source, error, month) {
+    rows = applyFloristFixes(rows, month);
     var items = rows.map(normalize).filter(function (i) { return i.active && i.name; });
     var updated = null;
     items.forEach(function (i) {

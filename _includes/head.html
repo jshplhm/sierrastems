@@ -18,6 +18,7 @@
     floristLabel: {{ site.florist_list_label | jsonify }},
     floristSheetId: {{ site.florist_sheet_id | jsonify }},
     floristMonths: {{ site.data.florist_months | jsonify }},
+    floristFixes: {{ site.data.florist_fixes | jsonify }},
     floristData: {{ '/assets/data/florist/' | relative_url | jsonify }},
     endpoint: {{ site.order_endpoint | jsonify }},
     minimum: {{ site.terms.offseason_minimum | default: 1000 }},
