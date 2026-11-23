@@ -1,6 +1,8 @@
 # Corrections the site applies on top of Brittany's florist sheet (it is view-only to us).
-# list: the menu name ("This week" for the weekly list). item: exact Item text. unit: Stem or Bunch. hide: true removes it.
+# list: the menu name ("This week" for the weekly list). item: exact Item text. unit: Stem or Bunch. price: new price. hide: true removes it.
 - { list: "Valentine's Day", item: "Kale, Clover", unit: Stem }
 - { list: "Valentine's Day", item: "Kale, Large", unit: Stem }
 - { list: "Valentine's Day", item: "Kale, Mini", unit: Stem }
 - { list: "This week", item: "Acacia Purple Feather", hide: true }
+- { list: "Valentine's Day", item: "Acacia, Flowering", price: 12 }
+- { list: "Mother's Day", item: "Berried - Dates", price: 10 }

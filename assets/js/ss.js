@@ -221,6 +221,7 @@
       rows.forEach(function (r) {
         if (r.name !== f.item) return;
         if (f.unit) r.unit = f.unit;
+        if (f.price != null) r.price = f.price;
         if (f.hide) r.active = false;
       });
     });
