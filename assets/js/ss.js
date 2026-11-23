@@ -218,7 +218,11 @@
     var list = month || 'This week';
     (C.floristFixes || []).forEach(function (f) {
       if (f.list !== list) return;
-      rows.forEach(function (r) { if (r.name === f.item && f.unit) r.unit = f.unit; });
+      rows.forEach(function (r) {
+        if (r.name !== f.item) return;
+        if (f.unit) r.unit = f.unit;
+        if (f.hide) r.active = false;
+      });
     });
     /* Photos from the sheet's Photo Links column, saved in _data/florist_photos.yml. */
     var photos = (C.floristPhotos || {})[list] || {};
