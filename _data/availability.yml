@@ -101,7 +101,6 @@
 - {"name": "Luma", "variety": "", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
 - {"name": "Luma (Goliath, 48-52\")", "variety": "", "unit": "Bunch", "price": 12.0, "region": "Monterey County", "active": true}
 - {"name": "Magnolia", "variety": "", "unit": "Bunch", "price": 7.0, "region": "Monterey County", "active": true}
-- {"name": "Magnolia Tips", "variety": "", "unit": "Bunch", "price": 7.0, "region": "Monterey County", "active": true}
 - {"name": "Mint", "variety": "", "unit": "Bunch", "price": 8.0, "region": "Monterey County", "active": true}
 - {"name": "Myrtle", "variety": "", "unit": "Bunch", "price": 9.0, "region": "Monterey County", "active": true}
 - {"name": "Myrtle, Mini", "variety": "", "unit": "Bunch", "price": 7.0, "region": "Monterey County", "active": true}

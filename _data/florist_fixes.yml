@@ -7,3 +7,4 @@
 - { list: "Valentine's Day", item: "Acacia, Flowering", price: 12 }
 - { list: "Mother's Day", item: "Berried - Dates", price: 10 }
 - { list: "Valentine's Day", item: "Berried - Dates", price: 10 }
+- { list: "This week", item: "Magnolia Tips", hide: true }
