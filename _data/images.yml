@@ -6,7 +6,7 @@ hero:
   width: 1125
   height: 1500
 farm:
-  src: /assets/images/farm.jpg
+  src: /assets/images/farm-ranunculus.jpg
   alt: Rows of ranunculus blooming under a hoop house on the Sierra Stems farm in Nevada County.
   width: 1598
   height: 1204
@@ -16,7 +16,7 @@ cooler:
   width: 1200
   height: 1500
 coast:
-  src: /assets/images/central-coast.jpg
+  src: /assets/images/grower-gerbera.jpg
   alt: Benches of gerbera daisies in red, coral, pink, and orange inside a partner grower's greenhouse on the Central Coast.
   width: 1000
   height: 1202
