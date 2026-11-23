@@ -230,15 +230,15 @@
   }
 
   /* key: '' for this week's list, or a month from floristMonths. */
+  function floristEntry(month) {
+    var list = C.floristMonths || [];
+    for (var i = 0; i < list.length; i++) if (list[i].month === month) return list[i];
+    return null;
+  }
   function floristUrl(month) {
     if (!month) return C.csv;
-    var list = C.floristMonths || [];
-    for (var i = 0; i < list.length; i++) {
-      if (list[i].month === month && C.floristSheetId) {
-        return 'https://docs.google.com/spreadsheets/d/' + encodeURIComponent(C.floristSheetId) + '/export?format=csv&gid=' + encodeURIComponent(list[i].gid);
-      }
-    }
-    return '';
+    var e = floristEntry(month);
+    return e && C.floristSheetId ? 'https://docs.google.com/spreadsheets/d/' + encodeURIComponent(C.floristSheetId) + '/export?format=csv&gid=' + encodeURIComponent(e.gid) : '';
   }
   function csvRows(text) {
     if (/^\s*</.test(text)) throw new Error('Not a CSV. Check the published link format.');
@@ -267,7 +267,7 @@
     availCache[month] = live.catch(function (err) {
       if (window.console) console.warn('[Sierra Stems] Live ' + (month || 'weekly') + ' list failed, using saved list:', err);
       if (!month) return finish(fallbackRows(), 'fallback', err);
-      return fetchText(C.floristData + encodeURIComponent(month) + '.csv')
+      return fetchText(C.floristData + encodeURIComponent((floristEntry(month) || {}).file || month) + '.csv')
         .then(function (text) { return finish(csvRows(text), 'fallback', err, month); })
         .catch(function () {
           delete availCache[month];
@@ -385,8 +385,9 @@
 
   function updatedText(data) {
     var t = data.month ? 'Last year\'s ' + data.month + ' prices. Slight fluctuations may occur, and we confirm availability when you order.' : (data.updated ? 'Last updated: ' + formatDate(data.updated) : (C.floristLabel && data.source !== 'sample' ? C.floristLabel : ''));
-    if (data.source === 'sample') t = (t ? t + '. ' : '') + 'Sample list.';
-    if (data.source === 'fallback') t = (t ? t + '. ' : '') + 'Showing our saved list; the live list did not load.';
+    var lead = t ? t.replace(/\.$/, '') + '. ' : '';
+    if (data.source === 'sample') t = lead + 'Sample list.';
+    if (data.source === 'fallback') t = lead + 'Showing our saved list; the live list did not load.';
     return t;
   }
 
