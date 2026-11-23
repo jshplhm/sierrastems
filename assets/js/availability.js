@@ -28,13 +28,20 @@
     var img = i.image_url
       ? '<img src="' + esc(i.image_url) + '" alt="" width="96" height="96" loading="lazy" decoding="async">'
       : '';
-    if (img && i.photo_url) img = '<a href="' + esc(i.photo_url) + '" target="_blank" rel="noopener" aria-label="Photo of ' + esc(i.name) + '">' + img + '</a>';
+    /* Sheet photos open under the row on request instead of showing as thumbnails. */
+    var photo = '';
+    if (i.photo_url) {
+      img = '';
+      photo = '<div class="c-photo" hidden><img alt="' + esc(i.name) + '" data-src="' + esc(i.image_url) + '" decoding="async">' +
+        '<a href="' + esc(i.photo_url) + '" target="_blank" rel="noopener">Open full size</a></div>';
+    }
     var source = esc(i.farm) + (i.farm && i.region ? ', ' : '') + esc(i.region);
     var max = i.qty_available != null ? ' max="' + i.qty_available + '"' : '';
     return '' +
       '<li class="stem-row' + (q ? ' in-order' : '') + (soldOut ? ' sold-out' : '') + '" data-id="' + esc(i.id) + '">' +
         '<span class="c-img">' + img + '</span>' +
-        '<span class="c-name"><strong>' + esc(i.name) + '</strong>' + (i.variety ? ' <span class="variety">' + esc(i.variety) + '</span>' : '') + '</span>' +
+        '<span class="c-name"><strong>' + esc(i.name) + '</strong>' + (i.variety ? ' <span class="variety">' + esc(i.variety) + '</span>' : '') +
+          (photo ? ' <button type="button" class="photo-btn" aria-expanded="false" data-photo>Photo</button>' : '') + '</span>' +
         '<span class="c-meta">' +
           '<span class="c-color"><i class="dot" style="background:' + SS.colorSwatch(i.color) + '"></i>' + esc(i.color || '') + '</span>' +
           '<span class="c-length">' + esc(i.stem_length) + '</span>' +
@@ -50,6 +57,7 @@
             '<button type="button" class="qty-btn" data-step="1" aria-label="One more ' + label + '"' + (soldOut ? ' disabled' : '') + '>+</button>' +
           '</span>' +
         '</span>' +
+        photo +
       '</li>';
   }
 
@@ -158,6 +166,16 @@
   });
 
   list.addEventListener('click', function (e) {
+    var pb = e.target.closest('[data-photo]');
+    if (pb) {
+      var box = pb.closest('.stem-row').querySelector('.c-photo');
+      var open = pb.getAttribute('aria-expanded') !== 'true';
+      var im = box.querySelector('img');
+      if (open && !im.getAttribute('src')) im.src = im.dataset.src;
+      box.hidden = !open;
+      pb.setAttribute('aria-expanded', String(open));
+      return;
+    }
     var b = e.target.closest('.qty-btn');
     if (!b) return;
     var row = b.closest('.stem-row');
@@ -221,7 +239,7 @@
       byId = {};
       items.forEach(function (i) { byId[i.id] = i; });
       document.querySelector('[data-updated]').textContent = SS.updatedText(data);
-      document.querySelector('.stem-table').classList.toggle('has-images', items.some(function (i) { return !!i.image_url; }));
+      document.querySelector('.stem-table').classList.toggle('has-images', items.some(function (i) { return !!i.image_url && !i.photo_url; }));
       buildFilters();
       render();
       paintBar();
